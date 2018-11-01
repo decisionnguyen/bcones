@@ -1,0 +1,76 @@
+<!--{template common/header}-->
+<!-- header start -->
+<!--{eval $wg_title=$mq_lang['post_comment'];$wg_url='portal.php?mod=view&aid='.$id;}
+<!--{subtemplate common/header_dh}-->
+<!-- header end -->
+<style>
+	.bg{background:#fff;}
+</style>
+
+<div class="comment-view">
+	<div class="bm_c">
+	<!--{if $csubject['allowcomment'] == 1}-->
+		<form id="cform" name="cform" action="portal.php?mod=portalcp&ac=comment" method="post" autocomplete="off">
+			<div class="tedt">
+				<div class="area">
+					<textarea name="message"  rows="3" class="pt" id="message"></textarea>
+				</div>
+			</div>
+			<!--{if $secqaacheck || $seccodecheck}-->
+				<!--{block sectpl}--><sec> <span id="sec<hash>" onclick="showMenu(this.id);"><sec></span><div id="sec<hash>_menu" class="p_pop p_opt" style="display:none"><sec></div><!--{/block}-->
+				<!--{subtemplate common/seccheck}-->
+			<!--{/if}-->
+
+			<!--{if $idtype == 'topicid' }-->
+				<input type="hidden" name="topicid" value="$id">
+			<!--{else}-->
+				<input type="hidden" name="aid" value="$id">
+			<!--{/if}-->
+			<input type="hidden" name="formhash" value="{FORMHASH}">
+			<!--<p class="ptn"><button type="submit" name="commentsubmit" value="true" class="pn"><strong>{lang comment}</strong></button></p>-->
+			<div class="btn_login">
+			<a href="JavaScript:" onClick="comment()" class="pn">{lang comment}</a>
+			</div>
+		</form>
+	<!--{/if}-->
+	</div>
+</div>
+
+
+
+<script>
+function comment(){
+	var url='portal.php?mod=portalcp&ac=comment';
+	var tips='';
+	$.ajax({
+		url: url,
+		type: 'POST',
+		data:{
+			aid:$id,
+			formhash:'{FORMHASH}',
+			commentsubmit:'true',
+			message:$('#message').attr('value')
+		},
+		datatype: 'html',
+		success: function(data){
+			//console.log(data);
+			tips=$(data).find(".jump_c p").eq(0).text();
+			if(!tips){
+				 window.location='{$wg_url}#commnet'
+			}
+			else{
+				tips='<div class="no">'+tips+'</div>';
+				$(".showmsg").empty().append(tips).fadeIn();
+				$('.showmsg div').css('margin-left',-($('.showmsg div').innerWidth()/2)+'px');
+
+				setTimeout(function () { 
+					$('.showmsg').empty().fadeIn();				
+				}, 2500);
+			}			
+		}
+	});
+	return false;
+}
+</script>
+<div class="showmsg"></div>
+<!--{template common/footer}-->

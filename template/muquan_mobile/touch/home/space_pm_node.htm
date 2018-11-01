@@ -1,0 +1,23 @@
+<!--{if $value[msgfromid] != $_G['uid']}-->
+<div class="friend_msg cl">
+	<div class="avat l"><img style="height:36px;width:36px;" src="<!--{avatar($value[msgfromid], small, true)}-->" /></div>
+    <div class="hua"></div>
+	<div class="dialog_green z">
+		<div class="m_c">
+			<div class="m_t">$value[message]</div>
+		</div>
+		<div class="date"><!--{date($value[dateline], 'u')}--></div>
+	</div>
+</div>
+<!--{else}-->
+<div class="self_msg cl">
+	<div class="avat r"><img style="height:36px;width:36px;" src="<!--{avatar($value[msgfromid], small, true)}-->" /></div>
+	<div class="hua"></div>
+    <div class="dialog_white y">			
+		<div class="m_c">
+			<div class="m_t">$value[message]</div>
+		</div>
+		<div class="date"><!--{date($value[dateline], 'u')}--></div>
+	</div>
+</div>
+<!--{/if}-->

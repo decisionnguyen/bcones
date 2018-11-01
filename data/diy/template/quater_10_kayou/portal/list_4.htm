@@ -1,0 +1,26 @@
+<!--{template common/header}-->
+<!--{eval $list = array();}-->
+<!--{eval $wheresql = category_get_wheresql($cat);}-->
+<!--{eval $list = category_get_list($cat, $wheresql, $page);}-->
+
+<link rel="stylesheet" type="text/css" href="template/quater_10_kayou/src/gongju.css" />
+
+<div id="pt" class="bm cl">
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
+		<a href="$_G[setting][navs][1][filename]">{lang portal}</a> <em>&rsaquo;</em>
+		<!--{loop $cat[ups] $value}--> <a href="{$portalcategory[$value['catid']]['caturl']}">$value[catname]</a><em>&rsaquo;</em><!--{/loop}-->
+		$cat[catname]
+	</div>
+</div>
+
+<div class="wp cl">
+   <div class="cl" style="float: left; width: 265px; min-height: 300px;">
+      <!--[diy=diy1]--><div id="diy1" class="area"><div id="framem2La2r" class="frame move-span cl frame-1"><div id="framem2La2r_left" class="column frame-1-c"><div id="framem2La2r_left_temp" class="move-span temp"></div><!--{block/32}--></div></div><div id="framezzFMYH" class="frame move-span cl frame-1"><div id="framezzFMYH_left" class="column frame-1-c"><div id="framezzFMYH_left_temp" class="move-span temp"></div><!--{block/33}--></div></div><div id="frameZtO02R" class="frame move-span cl frame-1"><div id="frameZtO02R_left" class="column frame-1-c"><div id="frameZtO02R_left_temp" class="move-span temp"></div><!--{block/34}--></div></div></div><!--[/diy]-->
+   </div>
+   <div class="cl" style="float: right; width: 820px; min-height: 300px;">
+      <!--[diy=diy2]--><div id="diy2" class="area"><div id="frameVicSVv" class="frame move-span cl frame-1"><div id="frameVicSVv_left" class="column frame-1-c"><div id="frameVicSVv_left_temp" class="move-span temp"></div><!--{block/35}--></div></div></div><!--[/diy]-->
+   </div>
+</div>
+
+<!--{template common/footer}-->

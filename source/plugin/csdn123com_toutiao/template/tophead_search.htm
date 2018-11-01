@@ -1,0 +1,25 @@
+<div class="container" id="cpcontainer">
+  <form name="cpform" method="post" action="?{$server_url}&step_one=yes" id="cpform">
+  <textarea name="postdata" style="display:none">{$postdata}</textarea>
+    <input type="hidden" name="formhash" id="formhash" value="{FORMHASH}" />
+    
+    <ul onmouseover="altStyle(this);" style="line-height:36px;font-size:14px;padding:16px;margin:16px;">
+    	
+        <li><h3>{lang csdn123com_toutiao:tophead_select}</h3></li>
+        
+        <!--{loop $specLinkArr $specKey $specValue}-->
+        <li>
+        	<input type="radio" id="sel{$specKey}" class="radio" value="{$specValue['url']}" name="specUrl" {if $specKey==0} checked {/if} />
+            &nbsp;&nbsp;
+            <label for="sel{$specKey}">
+            <!--{eval echo diconv($specValue['title'], 'UTF-8');}-->
+            </label>
+        </li>
+        <!--{/loop}-->
+		
+        <li style="margin-top:16px;"><input type="submit" class="btn" id="submit_editsubmit" name="editsubmit" value="{lang csdn123com_toutiao:confirm_collection}" onClick="this.value='{lang csdn123com_toutiao:wait_moment}'"></li>
+        
+    </ul>
+    
+  </form>
+</div>

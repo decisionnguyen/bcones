@@ -1,0 +1,109 @@
+<!--{block return}-->
+<link rel="stylesheet" href="source/plugin/muquan_mobile_s/static/js/swiper.min.css">
+<style>
+.index-banner .swiper-slide a{ display: block;}
+.index-banner .swiper-slide img{ width:100%; height:176px;vertical-align: middle;}
+.index-banner .swiper-slide p{position:absolute; left:0;bottom:0; width:100%; background:rgba(0,0,0,0.355);}
+.index-banner .swiper-slide span{display: block; padding:0 50px 0 10px; height:30px; line-height:30px; overflow: hidden;color:#fff;font-size:13px;}
+.index-banner .swiper-pagination{bottom:5px !important;text-align: right;padding-right:5px;}
+.swiper-pagination-bullet{ background:#fff; opacity:0.5;}
+.swiper-pagination .swiper-pagination-bullet-active{ background:#008cd6; opacity:1;}
+</style>
+<div class="swiper-container index-banner">
+	<div class="swiper-wrapper">
+	     <!--{loop $portal_banner $v}-->
+		 <div class="swiper-slide"><a href="{$v[2]}" ><img src="{$v[0]}"  alt="{$v[1]}"/><p><span>{$v[1]}</span></p></a></div>
+		 <!--{/loop}-->
+	</div>	 
+	<div class="swiper-pagination"></div>
+</div>
+
+<div class="index-icon">
+	<ul class="cl">
+   		<!--{loop $portal_nav $i $v}-->
+    	<li class="ico{$i}">
+       	  <a href="{$v[2]}">
+                <img src="{$v[0]}" alt="{$v[1]}" width="40" height="40"/>
+                <p>{$v[1]}</p>
+            </a>
+        </li>
+        <!--{/loop}-->
+        
+    </ul>
+    <div class="hot-post">
+    	<a href="{$_ms[top_url]}" title="">
+        <span><i class="iconfont">&#xe615;</i></span>
+		<p>{$_ms[top_txt]}</p>
+        </a>
+		
+    </div>
+</div>
+
+
+<div class="post-list post-list-index">
+   <div class="portal-index-cats forum-cat">
+		<div class="ttp">
+			<ul id="thread_types">
+				<li class="a"><a href="JavaScript:">{$ms_lang[new_article]}</a></li>
+				<!--{loop $cats $i $v}-->
+				<li ><a href="portal.php?mod=list&catid={$v[catid]}">{$v[catname]}</a></li>
+				<!--{/loop}-->
+			</ul>
+		</div>
+	</div>
+<script language="javascript">
+var navleft = $('.forum-cat li.a').position().left + 80 - document.body.clientWidth;
+if(navleft){
+$('.ttp').scrollLeft(navleft);
+}
+</script> 
+    <div id="alist">  
+       <!--{loop $data $i $post}-->
+        
+        <div class="data data-{$post[aid]}">
+            <a href="portal.php?mod=view&aid={$post[aid]}" title="{$post[title]}" >
+                <!--{if $post[picnum]<2}-->
+                <dl class="s cl">
+                   {if $post[pic]} <dd class="m"><img src="{$_G[setting][attachurl]}{$post[pic]}"  alt="{$post[title]}"></dd>{/if}
+                    <dt>{$post[title]}</dt>
+                    <dd class="info"><p class="time">{$post[time]}</p></dd>
+                 </dl>
+                <!--{else}-->
+                 <dl class="big">
+                    <dt>{$post[title]}</dt>
+                    <ul class="pic-list w-{$post[picnum]} cl">
+                        <!--{loop $post[pics] $k $pic}-->
+                        <li><span><img src="{$_G[setting][attachurl]}portal/{$pic[attachment]}"  alt="{$post[title]}"></span></li>
+                        <!--{/loop}-->
+                        <div class="num">{$ms_lang[gong]}{$post[picnum]}{$ms_lang[zhang]}</div>
+                    </ul>
+                    <dd class="info"><p class="time">{$post[time]}</p></dd>
+                 </dl>
+                <!--{/if}-->
+            </a>
+        </div>
+        <!--{/loop}-->
+    </div>
+    <div id="ajaxshow"></div>
+</div>
+<div class="ajaxpg" id="a_pg">
+	 <div id="ing">{$ms_lang[ing]}</div>
+	 <div id="more">{$ms_lang[more]}</div>
+</div>
+<script type="text/javascript">
+var paged=$paged,allpage=$pages,url='forum.php?module=portal';
+</script>
+<script type="text/javascript" src="source/plugin/muquan_mobile_s/static/js/page.js"></script>
+<script src="source/plugin/muquan_mobile_s/static/js/swiper.min.js"></script>
+<script>
+var swiper = new Swiper('.index-banner', {
+  slidesPerView: 1,
+  loop: true,
+  pagination: {
+	el: '.swiper-pagination',
+	clickable: true,
+  },
+});
+</script>
+
+<!--{/block}-->

@@ -1,0 +1,6 @@
+<!--{block return}-->
+{$announcements}
+<!--{loop $global_thread $i $v}-->
+<li><a href="forum.php?mod=viewthread&tid={$v[tid]}"><i class="top">{$ms_lang[top]}</i><em>{$v[dateline]}</em>{$v[subject]}</a></li>
+<!--{/loop}-->
+<!--{/block}-->

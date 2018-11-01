@@ -1,0 +1,14 @@
+	$ch = curl_init();
+        $requestURL = 'http://api.coindog.com/api/v1/symbols';
+        //var_dump($requestURL);
+        curl_setopt($ch, CURLOPT_URL, $requestURL);
+        if($header){
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+        }
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,FALSE);
+	curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,FALSE);
+        $curlRes = curl_exec($ch);
+	$returnInfoArr = json_decode($curlRes, true);
+	var_dump($returnInfoArr);
+	curl_close($ch);

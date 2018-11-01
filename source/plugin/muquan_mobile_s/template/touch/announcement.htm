@@ -1,0 +1,18 @@
+<!--{block return}-->
+<style>
+	.bg{background:#fff;}
+	.post-view{padding-bottom: 12px;}
+	.post-view h1{padding:12px 12px 0px; font-size:18px; font-weight: normal; line-height: 1.4}
+	.post-view .d *{color:#555;}
+	.post-info{height:28px; line-height: 28px; font-size:13px; padding:0 12px;}
+	.post-info em{color:#369; margin-right: 10px;}
+	.post-info span{color:#aaa;}
+</style>
+<div class="post-view">
+	<h1>$post[subject]</h1>
+	<div class="post-info">
+		<em>{$post[author]}</em> <span>{$post[dateline]}</span>
+	</div>
+	<div class="d">{$post[message]}</div>
+</div>
+<!--{/block}-->

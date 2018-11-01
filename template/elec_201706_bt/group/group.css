@@ -1,0 +1,58 @@
+body { background: #F0F4FB !important}
+#pt { padding: 5px 0}
+.tl .th { padding: 0}
+.bbda, #g_guide li { border-bottom: 1px dashed #E9E9E9}
+#g_guide li:last-child { border-bottom: 0}
+
+.list_top_box{background:#FFF none repeat scroll 0 0;padding:20px 15px 15px 15px;margin-bottom:10px}
+.list_top{font-size:16px;color:#5E5E5E;font-weight:400;margin-bottom:16px;line-height:120%;position:relative;top:-5px}
+.list_tit img{position:relative;top:5px;margin-right:11px}
+.list_info li{float:left;padding-left:19px;line-height:150%;background:url(../style/rt_ico2.png) no-repeat 4px center;font-size:14px;width:365px;padding-right:35px;margin-bottom:12px;overflow:hidden;white-space:nowrap;word-wrap:normal;text-overflow:ellipsis}
+.list_info a{color:#777}
+
+
+/* 群组首页幻灯/Group Banner */
+
+.group_banner_box { width: 800px; height: 340px; overflow: hidden; position: relative}
+.group_banner ul { width: 999999px; height: 340px; position: relative}
+.group_banner li { width: 800px; height: 340px; text-align: left;font-size:0;float:left;display:inline;position:relative; overflow: hidden}
+.group_banner li .si_0 { position: absolute; bottom: -44px; left: 0; width: 814px; height: 44px; line-height: 44px; font-size: 16px; padding-left: 16px; transition: all 0.5s ease 0s; background: url(../style/banner_bg.png) repeat left top}
+.group_banner li .si_1 { font-size: 16px; font-weight: 400; padding-left: 0; color: #FFFFFF}
+.group_banner li:hover .si_0 { bottom: 0}
+.group_banner li p { width:300px;height: 20px;line-height: 20px; margin: 5px 0 30px 0; overflow: hidden; padding-left: 22px}
+
+/* end */
+
+
+.pgs #newspecial { width: 90px; height: 32px; background: url(../style/pn_post.png) no-repeat center center #62BAE4}
+.pgs #newspecial img { display: none}
+.pgb a { padding-right: 12px}
+
+.tb { padding: 0 5px 0 0}
+.tb { height: 30px; border-bottom: 1px solid #EEEEEE; background: #F9F9F9}
+.tb li { float: left; margin: 0}
+.tb a { display: block;padding: 0 15px !important;margin: 0; border: 0; border-right: 1px solid #EDEDED; background: none!important}
+.tb .a a, .tb .current a { color: #666666; border-bottom-color: #FFF; background: #FFF !important;font-weight: 400}
+.tb .y a { background: none !important}
+
+.bm .tb li { margin: 0}
+.bm .tb .a a { height: 31px; border-bottom: 0}
+
+.ct2 .mn { width: 870px; margin: 0}
+.ct2 .sd { width: 320px}
+
+
+#ct .bm { padding: 15px; margin: 0 0 10px 0; border: 0}
+#ct .bm_h { padding: 5px 0 0 0; font-size: 16px; color: #777777; font-weight: bold; margin-bottom: 10px; line-height: 120%; position: relative; border: 0; background: none}
+#ct .bm_h h3 { color: #919090; font-size: 15px; padding-left: 28px; background: url(../style/cate.png) no-repeat left 1px}
+#ct .bm_c { padding: 10px 0}
+
+.tuijian li { float: left; width: 261px; padding: 12px 0 12px 9px; border-bottom: 1px dashed #EDEDED}
+.tuijian li:last-child { border-bottom: 0}
+.tuijian .pic { float: left; margin-right: 12px}
+.tuijian li p { color: #888888}
+
+.thread_post { width: 290px; height: 56px; padding: 0; margin: 0 0 10px 0; text-align: center; border-radius: 0; background: url(../style/t_post.png) no-repeat 60px center #62BAE4}
+.thread_post:hover { background: url(../style/t_post.png) no-repeat 60px center #88C5E3}
+.thread_post a { padding: 0 0 0 30px; height: 56px; line-height: 56px; color: #FFFFFF; font-size: 19px}
+.thread_post a:hover { text-decoration: none}

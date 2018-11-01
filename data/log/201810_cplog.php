@@ -1,0 +1,12 @@
+<?PHP exit;?>	1539873123	admin	1	219.140.10.119		GET={}; POST={};
+<?PHP exit;?>	1539873123	admin	1	219.140.10.119	index	GET={}; POST={};
+<?PHP exit;?>	1539873123	admin	1	219.140.10.119	checktools	GET={operation=filecheck; homecheck=yes; inajax=1; ajaxtarget=filecheck_div; }; POST={};
+<?PHP exit;?>	1539873136	admin	1	219.140.10.119	index	GET={}; POST={};
+<?PHP exit;?>	1539873140	admin	1	219.140.10.119	portalcategory	GET={}; POST={};
+<?PHP exit;?>	1539873146	admin	1	219.140.10.119	nav	GET={}; POST={};
+<?PHP exit;?>	1539873169	admin	1	219.140.10.119	nav	GET={operation=headernav; do=edit; id=56; }; POST={};
+<?PHP exit;?>	1539873185	admin	1	219.140.10.119	nav	GET={operation=headernav; do=edit; id=56; namenew=实时行情; urlnew=market.php; editsubmit=提交; }; POST={namenew=实时行情; urlnew=market.php; editsubmit=提交; };
+<?PHP exit;?>	1539873188	admin	1	219.140.10.119	nav	GET={operation=headernav; }; POST={};
+<?PHP exit;?>	1539873191	admin	1	219.140.10.119	tools	GET={operation=updatecache; }; POST={};
+<?PHP exit;?>	1539873194	admin	1	219.140.10.119	tools	GET={operation=updatecache; step=2; type={0=data; 1=tpl; }; confirmed=确定; }; POST={type={0=data; 1=tpl; }; confirmed=确定; };
+<?PHP exit;?>	1539873195	admin	1	219.140.10.119	tools	GET={operation=updatecache; step=3; type=data_tpl; }; POST={};

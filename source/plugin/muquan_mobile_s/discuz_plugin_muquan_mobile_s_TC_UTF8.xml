@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X3,X3.1,X3.2,X3.3,X3.4]]></item>
+	<item id="Time"><![CDATA[2018-03-09 11:39]]></item>
+	<item id="From"><![CDATA[項目20180115 (http://192.168.0.102/yewu/20160330dz/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[含門戶手機模板設置]]></item>
+			<item id="identifier"><![CDATA[muquan_mobile_s]]></item>
+			<item id="description"><![CDATA[含門戶手機模板設置插件，木泉網含門戶手機模板配套插件]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[muquan_mobile_s/]]></item>
+			<item id="copyright"><![CDATA[木泉網(http://www.muquan.net)]]></item>
+			<item id="version"><![CDATA[1.0]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[m]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[28]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X3,X3.1,X3.2,X3.3,X3.4]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[配色]]></item>
+				<item id="description"><![CDATA[手機版主題顏色設置，默認為#f65d5b，可以在選色板中選擇，也可以直接輸入16進制色值]]></item>
+				<item id="variable"><![CDATA[m_color]]></item>
+				<item id="type"><![CDATA[color]]></item>
+				<item id="value"><![CDATA[#f15b5a]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[logo]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[logo]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[template/muquan_mobile/touch/static/images/logo.png]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[默認首頁]]></item>
+				<item id="description"><![CDATA[打開網站域名默認進入的頁面]]></item>
+				<item id="variable"><![CDATA[home]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[portal]]></item>
+				<item id="extra"><![CDATA[portal=門戶
+forum=論壇
+guide=導讀]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[論壇首頁數據來源]]></item>
+				<item id="description"><![CDATA[論壇首頁數據來源板塊，選擇空的時候輸出所有板塊數據]]></item>
+				<item id="variable"><![CDATA[m_data]]></item>
+				<item id="type"><![CDATA[forums]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[]]></item>
+				</item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[論壇首頁排序規則]]></item>
+				<item id="description"><![CDATA[論壇首頁瀑布流帖子排序的規則]]></item>
+				<item id="variable"><![CDATA[m_order]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[1=最新發布
+2=最新回復
+3=最多評論
+4=最多瀏覽]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[首頁每頁帖子數]]></item>
+				<item id="description"><![CDATA[首頁瀑布流每次加載的數據條數，建議5-15條，默認10條。]]></item>
+				<item id="variable"><![CDATA[m_num]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[10]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[門戶首頁幻燈片]]></item>
+				<item id="description"><![CDATA[一行一張幻燈片，格式為︰圖片地址:文字:鏈接；其中圖片可以填寫相對路徑也可以填寫絕對路徑]]></item>
+				<item id="variable"><![CDATA[portal_banner]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[template/muquan_mobile/touch/static/images/banner/1.jpg:微信小程序API 獲取小程序頁面二維碼:forum.php
+template/muquan_mobile/touch/static/images/banner/1.jpg:微信小程序API 獲取小程序頁面二維碼:forum.php
+template/muquan_mobile/touch/static/images/banner/1.jpg:微信小程序API 獲取小程序頁面二維碼:forum.php]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[門戶頭條文字]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[top_txt]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[位于東馬來西亞的仙本那因為其特別適合]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="8">
+				<item id="displayorder"><![CDATA[7]]></item>
+				<item id="title"><![CDATA[門戶頭條鏈接]]></item>
+				<item id="description"><![CDATA[點擊門戶頭條進入的網址鏈接]]></item>
+				<item id="variable"><![CDATA[top_url]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[#]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="9">
+				<item id="displayorder"><![CDATA[8]]></item>
+				<item id="title"><![CDATA[門戶導航]]></item>
+				<item id="description"><![CDATA[門戶首頁幻燈片下導航信息，一行一個導航按鈕，格式為︰圖片地址:文字:鏈接；其中圖片可以填寫相對路徑也可以填寫絕對路徑]]></item>
+				<item id="variable"><![CDATA[portal_nav]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[template/muquan_mobile/touch/static/images/icon1.png:熱點:#
+template/muquan_mobile/touch/static/images/icon2.png:位置:#
+template/muquan_mobile/touch/static/images/icon3.png:視頻:#
+template/muquan_mobile/touch/static/images/icon4.png:數據:#
+template/muquan_mobile/touch/static/images/icon5.png:獎勵:#]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="10">
+				<item id="displayorder"><![CDATA[9]]></item>
+				<item id="title"><![CDATA[側邊導航]]></item>
+				<item id="description"><![CDATA[側邊導航設置，一行一個導航菜單，格式為 文字:鏈接。]]></item>
+				<item id="variable"><![CDATA[nav]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[門戶首頁:forum.php?module=portal
+論壇首頁:forum.php?module=forum
+論壇版塊:forum.php?forumlist=1
+主題導讀:forum.php?mod=guide&view=newthread
+自定義:#]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="announcements"><![CDATA[公告]]></item>
+				<item id="top"><![CDATA[置頂]]></item>
+				<item id="gong"><![CDATA[共]]></item>
+				<item id="zhang"><![CDATA[張]]></item>
+				<item id="rate"><![CDATA[推薦]]></item>
+				<item id="tu"><![CDATA[圖片]]></item>
+				<item id="ing"><![CDATA[加載中...]]></item>
+				<item id="more"><![CDATA[加載更多]]></item>
+				<item id="new_article"><![CDATA[最新文章]]></item>
+				<item id="home"><![CDATA[首頁]]></item>
+				<item id="dig"><![CDATA[精華]]></item>
+				<item id="sens"><![CDATA[消息發送成功\！]]></item>
+				<item id="my"><![CDATA[我的]]></item>
+				<item id="thread"><![CDATA[主題]]></item>
+				<item id="reply"><![CDATA[回復]]></item>
+				<item id="pm"><![CDATA[消息]]></item>
+				<item id="profile"><![CDATA[資料]]></item>
+				<item id="forum"><![CDATA[論壇]]></item>
+				<item id="portal"><![CDATA[門戶]]></item>
+				<item id="forums"><![CDATA[版塊]]></item>
+				<item id="guide"><![CDATA[導讀]]></item>
+				<item id="all"><![CDATA[全部]]></item>
+				<item id="back"><![CDATA[返回]]></item>
+				<item id="zai"><![CDATA[在]]></item>
+				<item id="post"><![CDATA[發帖]]></item>
+				<item id="views"><![CDATA[閱\讀]]></item>
+				<item id="nav"><![CDATA[導航]]></item>
+				<item id="posts"><![CDATA[帖子]]></item>
+				<item id="subs"><![CDATA[下級分類]]></item>
+				<item id="new_comment"><![CDATA[最新評論]]></item>
+				<item id="post_comment"><![CDATA[發布評論]]></item>
+				<item id="relatedposts"><![CDATA[推薦文章]]></item>
+				<item id="wecome"><![CDATA[歡迎您，]]></item>
+				<item id="login"><![CDATA[點我登錄]]></item>
+				<item id="go_login"><![CDATA[點擊登錄]]></item>
+				<item id="no_login"><![CDATA[您還沒登錄]]></item>
+				<item id="no_comment"><![CDATA[- 暫無評論，快搶沙發 -]]></item>
+			</item>
+		</item>
+	</item>
+</root>

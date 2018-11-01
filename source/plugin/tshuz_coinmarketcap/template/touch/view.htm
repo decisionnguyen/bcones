@@ -1,0 +1,259 @@
+<!--{template common/header}-->
+<link rel="stylesheet" type="text/css" href="source/plugin/tshuz_coinmarketcap/index.css" />
+<div class="dzlab_header">
+    {$data[name]}{lang tshuz_coinmarketcap:RJGVJ0}
+</div>
+    <div class="mn submenu l6 cl" style="margin-top:50px;">
+        <ul class="tb cl" id="litab">
+    	<li id="li_1d"><a href="javascript:;" onclick="loadchart('1d');">1{lang tshuz_coinmarketcap:uRtPP4}</a></li>
+    	<li id="li_7d"><a href="javascript:;" onclick="loadchart('7d');">7{lang tshuz_coinmarketcap:uRtPP4}</a></li>
+    	<li id="li_1m"><a href="javascript:;" onclick="loadchart('1m');">1{lang tshuz_coinmarketcap:hr644u}</a></li>
+    	<li id="li_3m"><a href="javascript:;" onclick="loadchart('3m');">3{lang tshuz_coinmarketcap:hr644u}</a></li>
+    	<li id="li_1y"><a href="javascript:;" onclick="loadchart('1y');">1{lang tshuz_coinmarketcap:FzAJZa}</a></li>
+    	<li id="li_all"><a href="javascript:;" onclick="loadchart('all');">{lang tshuz_coinmarketcap:aE8t6U}</a></li>
+        </ul>
+    </div>
+<div class="coin_info">
+	<table cellpadding="0" cellspacing="0" class="table">
+    	<tr>
+        	<th>{lang tshuz_coinmarketcap:ti4Lf5}</th>
+            <td><div class="s-s-{$coin} coin-logo"></div>{$data[name]}({$data[symbol]})</td>
+        </tr>
+        <tr>
+        	<th>{lang tshuz_coinmarketcap:aK4k7K}</th>
+            <td>{$pvars[code]}{$data['price_'.$pvars['covert']]}({$convert})</td>
+        </tr>
+        <tr>
+        	<th>24{lang tshuz_coinmarketcap:TE9LI5}</th>
+            <td><span class="c_{if $data['percent_change_24h']<0}minus{else}add{/if}">{$data['percent_change_24h']}%</span><b class="ico_{if $data['percent_change_24h']<0}fall{else}increase{/if}">&nbsp;</b></td>
+        </tr>
+        <tr>
+        	<th>7{lang tshuz_coinmarketcap:TE9LI5}</th>
+            <td><span class="c_{if $data['percent_change_7d']<0}minus{else}add{/if}">{$data['percent_change_7d']}%</span><b class="ico_{if $data['percent_change_7d']<0}fall{else}increase{/if}">&nbsp;</b></td>
+        </tr>
+        <tr>
+          	<th>{lang tshuz_coinmarketcap:s2RQ22}</th>
+            <td>{$pvars[code]}{$data['market_cap_cny']} {$convert}<span class="dgrey">$data['market_cap_btc'] BTC</span></td>
+        </tr>
+        <tr>
+          	<th>{lang tshuz_coinmarketcap:DG5828}</th>
+            <td>{$pvars[code]}{$data['market_cap_cny']} {$convert}<span class="dgrey">$data['market_cap_btc'] BTC</span></td>
+        </tr>
+        <tr>
+          	<th>{lang tshuz_coinmarketcap:rZ8n0b}</th>
+            <td>{$data['available_supply']} {$data['symbol']}</td>
+        </tr>
+        <tr>
+          	<th>{lang tshuz_coinmarketcap:QzzZz2}</th>
+            <td>{$data['max_supply']} {$data['symbol']}</td>
+        </tr>
+</table>
+	<script src="source/plugin/tshuz_coinmarketcap/highcharts/highcharts.js"></script>
+
+    <div class="c_chart" style="background:#fff;">
+    
+    <div class="coin_load"><div class="coin_loading"></div>{lang tshuz_coinmarketcap:Tz71Vv}</div>
+    <div id="container"></div>
+    </div>
+    <script>
+	var chart = null;
+	loadchart('7d');
+	
+	function label_format_fiat() {
+		val = Math.round(this.value);
+		if(val<10000){
+			val = Math.round(val/10000);	
+		}else if(val< 100000000){
+			val = Math.round(val/10000)+' {lang tshuz_coinmarketcap:yNT1t7}'	
+		}else{
+			val = Math.round(val/100000000)+' {lang tshuz_coinmarketcap:q4uI11}'	
+		}
+		return '$' + val;
+	}
+	var chartColors = ['#56b4e9', '#ff9f00', '#009e73', '#777'];
+	function loadchart(DayTYPE){
+		$('#container').html('');
+		$('.coin_load').show();
+		$('#litab li').each(function(){
+			$(this).removeClass('a');
+		})
+		$('#li_'+DayTYPE).addClass('a');
+		$.getJSON('plugin.php?id=tshuz_coinmarketcap&mod=chart&coin={$coin}&dl='+DayTYPE, function (datas) {
+			if(datas.error ){
+				popup.open('{lang tshuz_coinmarketcap:QWC6D6}'+datas.error,'alert');return false;	
+			}
+			$('#container').highcharts({
+				chart: {
+					backgroundColor: 'transparent',
+					type: 'line',
+					zoomType: 'x',
+					height:420,
+					ignoreHiddenSeries: true,
+				},
+				colors: chartColors,
+				title: {
+					text: '{$data[name]} {lang tshuz_coinmarketcap:D32VLF}',
+					align: "center",
+					style: {
+						color: '#757575',
+						fontSize: "24px"
+					}
+				},
+				
+				xAxis: [{
+					labels: {
+						rotation:0,
+					},
+					showFirstLabel:false,
+					categories: datas.xData,
+					crosshair: true,
+					gridLineWidth:0,
+					type: 'datetime',
+					
+				}],
+				yAxis: [{
+					labels: {
+						formatter: function (){
+							return '';	
+						},
+						style: {
+							color: chartColors[2],
+						},
+						align: "left",
+						x: 15
+					},
+					title: {
+						text: '',
+						style: {
+							color: chartColors[2],
+							'font-weight': 'bold'
+						}
+					},
+					showEmpty: false,
+					height: '80%',
+					opposite: true,
+					showLastLabel:false,
+					floor: 0
+				}, { 
+					labels: {
+						formatter: label_format_fiat,
+						align: 'right',
+						style: {
+							color: chartColors[0]
+						}
+					},
+					title: {
+						text: '{lang tshuz_coinmarketcap:s2RQ22}',
+						style: {
+							color: chartColors[0],
+							'font-weight': 'bold'
+						}
+					},
+					showEmpty: false,
+					height: '80%',
+					opposite: false,
+					floor: 0,
+					lineWidth: 1,
+					showLastLabel:false,
+					opposite: false
+					
+				}, { // Tertiary yAxis
+					labels: {
+						formatter:  function() {
+							return '';
+						},
+						style: {
+							color: chartColors[1],
+						},
+						align: "left",
+						x: 15
+					},
+					title: {
+						text: '',
+						style: {
+							color: chartColors[1],
+							'font-weight': 'bold'
+						}
+					},
+					showEmpty: false,
+					height: '80%',
+					opposite: true,
+					showLastLabel:false,
+					floor: 0
+				},{
+					labels: {
+						formatter: label_format_fiat,
+						align: 'right',
+						style: {
+							color: chartColors[3],
+						}
+					},
+					title: {
+						text: '{lang tshuz_coinmarketcap:volume_usd}',
+						style: {
+							color: chartColors[3],
+							'font-weight': 'bold'
+						}
+					},
+					showEmpty: false,
+					top: '80%',
+					height: '20%',
+					offset: 0,
+					lineWidth: 1,
+					opposite: false,
+					showLastLabel:false
+				}
+				],
+				tooltip: {
+					shared: true
+				},
+				series: [{
+					name: '{lang tshuz_coinmarketcap:market_cap}',
+					type: 'spline',
+					yAxis: 1,
+					data: datas.datasets[0].data,
+					tooltip: {
+						valueSuffix: ' USD'
+					}
+				}, {
+					name: '{lang tshuz_coinmarketcap:price_btc}',
+					type: 'spline',
+					yAxis: 2,
+					data: datas.datasets[1].data,
+					marker: {
+						enabled: false
+					},
+					tooltip: {
+						valueSuffix: ''
+					}
+				}, {
+					name: '{lang tshuz_coinmarketcap:price_usd}',
+					type: 'spline',
+					data: datas.datasets[2].data,
+					yAxis:0,
+					tooltip: {
+						valueSuffix: ''
+					}
+				}, {
+					name: '{lang tshuz_coinmarketcap:volume_usd}',
+					type: 'column',
+            		yAxis: 3,
+					data: datas.datasets[3].data,
+					tooltip: {
+						valueSuffix: ' USD'
+					},
+					dataGrouping: {
+						approximation: "average",
+						enabled: false
+					}
+				}]
+			});
+			$('.coin_load').hide();
+		})
+	}
+
+
+	</script>
+</div>
+{eval $nofooter=1;}
+<!--{template common/footer}-->

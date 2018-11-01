@@ -1,0 +1,60 @@
+<!--{block return}-->
+<div class="threadlist">
+    <!--{loop $muquan_index_list $i $thread}-->
+    <!--<li>
+       <a href="forum.php?mod=viewthread&tid=$value[tid]" >
+         <div class="title">
+            <!--{if in_array($value['displayorder'], array(1, 2, 3, 4))}-->
+				<em class="ico_top ico">{$ms_lang[top]}</em>
+			<!--{elseif $value['digest'] > 0}-->
+				<em class="ico_des ico">{$ms_lang[dig]}</em>
+            <!--{elseif $value['rate'] > 0}-->
+				<em class="ico_rate ico">{$ms_lang[rate]}</em>
+			<!--{elseif $value['attachment'] == 2 && $_G['setting']['mobile']['mobilesimpletype'] == 0}-->
+				<em class="ico_tu ico">{$ms_lang[tu]}</em>
+			<!--{/if}-->
+         <span {$value[highlight]}>{$value[subject]}</span></div>
+         <p class="cl">
+            <em>{$value[views]} / {$value[replies]}</em>
+            <span><i class="iconfont">&#xe606;</i>{$value[author]}</span><span>{$value[dateline]}</span>
+         </p>
+       </a>
+    </li>-->
+    
+     <div class="data">
+
+                        <a href="forum.php?mod=viewthread&tid={$thread[tid]}" >
+                            <div class="info">
+                                <div class="au">
+                                    <em class="tx"><!--{avatar($thread[authorid],small)}--></em>
+                                    <p>
+                                        <span style="font-size:13px; color:#666">{$thread[author]}</span>
+                                         <!--{if in_array($thread['displayorder'], array(1, 2, 3, 4))}-->
+                                            <i class="ico_top ico">{$ms_lang[top]}</i>
+                                        <!--{elseif $thread['digest'] > 0}-->
+                                            <i class="ico_des ico">{$ms_lang[dig]}</i>
+                                        <!--{elseif $thread['rate'] > 0}-->
+                                            <i class="ico_rate ico">{$ms_lang[reta]}</i>
+                                        <!--{/if}-->
+                                    </p>
+                                    <p><span style="font-size: 11px;color: #999;">{$thread[dateline]}</span></p>
+                                </div>
+                                <span class="num"><i class="iconfont">&#xe60c;</i>
+                                <!--{if $mq_forum['vc']==1}-->{$thread[views]}<!--{else}-->{$thread[replies]}<!--{/if}--></span>
+                            </div>
+                            <h2>{$thread[subject]}</h2>
+                           <!--{hook/forumdisplay_threadsimglist $key}-->
+                        </a>
+                    </div>
+    <!--{/loop}-->
+</div>
+<div id="ajaxshow"></div>
+<div class="ajaxpg" id="a_pg">
+	 <div id="ing">{$ms_lang[ing]}</div>
+	 <div id="more">{$ms_lang[more]}</div>
+</div>
+<script type="text/javascript">
+var paged=$paged,allpage=$pages;
+</script>
+<script type="text/javascript" src="source/plugin/muquan_mobile_s/static/js/page.js"></script> 
+<!--{/block}-->

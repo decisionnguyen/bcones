@@ -1,0 +1,57 @@
+<!--{template common/header}-->
+<!-- header start -->
+<!--{eval $wg_title=$cat[catname];$wg_url='portal.php?mod=list&catid='.$article['catid'];}
+<!--{subtemplate common/header_dh}-->
+<!-- header end -->
+
+
+<!--{hook/view_article_top}-->
+<!--{ad/text/wp a_t}-->
+<style id="diy_style" type="text/css"></style>
+<div class="wp">
+	<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+<div class="post-view wp cl">
+	<div class="content">
+			<div class="base">
+				<h1>$article[title]</h1>
+				<p>
+					<em>{echo date('Y-m-d',strtotime($article[dateline]));}</em>
+					<em>$article[username]</em>
+					<a href="{echo getportalcategoryurl($cat[catid])}" >$cat[catname]</a>
+				</p>
+			</div>
+			<div class="d">
+				$content[content]
+				<!--{if $multi}--><div class="ptw pbw cl">$multi</div><!--{/if}-->
+				<div class="post-view-data">{$mq_lang[views]}(<!--{if $article[viewnum] > 0}-->$article[viewnum]<!--{else}-->0<!--{/if}-->)</div>
+			</div>
+	 </div>
+	 <!--{if $article['related']}-->
+	 <div class="relatedposts">
+        <h3><span>{$mq_lang[relatedposts]}</span></h3>
+        <ul>
+        	<!--{loop $article['related'] $raid $rvalue}-->
+			<li><a href="{$rvalue[uri]}">{$rvalue[title]}</a></li>
+			<!--{/loop}-->
+		</ul>
+	 </div>
+	 <!--{/if}-->
+	 <!--{if $article['allowcomment']==1}-->
+		<!--{eval $data = &$article}-->
+		<div class="view-comment">
+			<h6 class="cl">
+				<span class="z">{$mq_lang[new_comment]}</span>
+				<a href="{$common_url}" class="y"><i class="iconfont">&#xe69e;</i>{$mq_lang[post_comment]}</a>
+			</h6>
+			{if $commentlist}
+			<!--{loop $commentlist $comment}-->
+			<!--{template portal/comment_li}-->
+			<!--{/loop}-->
+			{else}
+			<div class="post-no-comment">{$mq_lang[no_comment]}</div>
+			{/if}
+		</div>
+	<!--{/if}-->
+</div>
+<!--{subtemplate common/footer}-->

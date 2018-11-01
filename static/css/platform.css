@@ -1,0 +1,149 @@
+.platform{
+  padding: 40px 0 !important;
+}
+.left{
+  width: 841px;
+}
+.right{
+  width: 336px;
+}
+.intro{
+  display: flex;
+  font-size: 12px;
+  color: #999;
+  line-height: 1.7;
+}
+.intro>img{
+  flex: 0 0 80px;
+  height: 98px;
+  margin-right: 44px;
+}
+.intro .tit{
+  font-size:18px;
+  color: #333;
+}
+.intro .txt{
+  margin: 6px 0 5px;
+}
+.intro .foot span{
+  margin-right: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.intro .foot img{
+  width: 15px;
+  height: 15px;
+  margin-right: 9px;
+}
+.tab{
+  display: flex;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  font-size:20px;
+  margin: 60px 0 30px;
+}
+.tab>div{
+  margin-right: 48px;
+  border-bottom:3px solid transparent;
+  padding-bottom: 2px;
+  cursor: pointer;
+}
+.tab>div.active{
+  border-bottom-color: rgba(12,151,225,1);
+  color: #0C97E1;
+}
+.condition{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  margin-top: 36px;
+}
+.condition select{
+  width:151px;
+  height:31px;
+  border:1px solid rgba(238,238,238,1);
+  border-radius:2px;
+  margin-right: 15px;
+  font-size: inherit;
+  color: #666666;
+}
+.left .datahead{
+  font-size: 14px;
+  color: #999;
+  background:rgba(238,238,238,1);
+  height:40px;
+  display: flex;
+  padding: 0 14px;
+  align-items: center;
+}
+.left .databody{
+  padding: 5px 10px;
+  color: #666;
+}
+.left .row{
+  display: flex;
+  line-height: 48px;
+  border-bottom: 1px solid #eee;
+}
+.flex{
+  display: flex;
+  align-items: center;
+}
+.flex img{
+  margin-right: 7px;
+  width: 16px;
+  height: 16px;
+}
+.overview{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.6;
+  margin-bottom: 78px;
+}
+.overview>div{
+  margin: 0 10px;
+  color: #666;
+}
+.overview .money{
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+}
+.overview .tag{
+  color: #0C97E1;
+  width:72px;
+  line-height:24px;
+  border:1px solid rgba(12,151,225,1);
+  border-radius:4px;
+  text-align: center;
+}
+.panel{
+  border:1px solid rgba(238,238,238,1);
+  border-radius:4px;
+  font-size:13px;
+  color: #666;
+  margin-top: 35px;
+  padding: 0 10px;
+}
+.panel>div{
+  line-height: 41px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(238,238,238,1);
+}
+.panel>div.head{
+  border-top: none;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+.introduce{
+  text-indent: 2em;
+  line-height: 1.8;
+  color: #666;
+}
+.cost{
+  line-height: 1.8;
+  color: #666;
+}

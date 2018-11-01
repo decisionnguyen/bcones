@@ -1,0 +1,136 @@
+body{
+  margin:0;
+  font-family: PingFang SC,Hiragino Sans GB,Heiti SC,Microsoft YaHei;
+  font-size: 14px;
+}
+a{
+  text-decoration: none;
+}
+::-webkit-input-placeholder{
+  color: #999;
+}
+.inner{
+  width: 1200px;
+  margin:auto;
+  position: relative;
+}
+.pageHead{
+  border-bottom:1px solid rgba(238,238,238,1);
+}
+.pageHead>.inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+.pageHead .left{
+  display: flex;
+  align-items: center;
+}
+.pageHead .left a{
+  margin-right: 38px;
+  color: #333333;
+}
+.pageHead .right{
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.pageHead .right .search{
+  display: flex;
+  align-items: center;
+  width:209px;
+  height:32px;
+  border:1px solid rgba(153,153,153,1);
+  border-radius:4px;
+}
+.pageHead .right .search img{
+  margin: 0 8px 0 14px;
+}
+.pageHead .right .search input{
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 0;
+  flex: auto;
+  font-size: inherit;
+}
+.pageHead .right .search div{
+  color: #999999;
+  padding: 0 9px;
+  border-left: 1px solid #999;
+  white-space: nowrap;
+}
+.pageHead .right a{
+  color: #999999;
+  margin-left: 25px;
+}
+.pageContent .inner{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.pageContent .ad{
+  display: flex;
+  justify-content: space-between;
+  height: 332px;
+  width: 833px;
+}
+.pageContent .ad>div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.pageContent .bar{
+  width:340px;
+  height:480px;
+  border:1px solid rgba(238,238,238,1);
+  border-radius:4px;
+  padding-top: 16px;
+}
+.pageContent .bar .title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.pageContent .bar .tab{
+  display: flex;
+  align-items: center;
+  padding: 8px 2px;
+  color: #666;
+}
+.pageContent .bar .tab a{
+  padding: 0 14px;
+}
+.pageContent .bar .tab a.active{
+  color: #0C97E1;
+}
+.pageContent .bar .datahead{
+  font-size: 12px;
+  color: #999;
+  background:rgba(238,238,238,1);
+  height:25px;
+  display: flex;
+  padding: 0 14px;
+  align-items: center;
+}
+.pageContent .bar .databody{
+  padding: 5px 10px;
+  color: #999999;
+}
+.pageContent .bar .row{
+  display: flex;
+  padding: 6px 0;
+}
+.pageContent .bar .row .coin{
+  display: flex;
+  align-items: center;
+}
+.pageContent .bar .row img{
+  width: 20px;
+  height: 20px;
+  margin-right: 7px;
+}

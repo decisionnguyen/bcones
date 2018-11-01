@@ -1,0 +1,42 @@
+<form name="cpform" method="post" autocomplete="off" action="?{$server_url}&deluser=yes" id="cpform" >
+  <input type="hidden" name="formhash" id="formhash" value="{FORMHASH}" />
+  <table class="tb tb2 ">
+    <tbody>
+      <tr class="header">
+        <th>&nbsp;</th>
+        <th>UID</th>
+        <th>{lang csdn123com_toutiao:csdn123_tip8}</th>
+        <th>{lang csdn123com_toutiao:csdn123_tip126}</th>
+        <th>{lang csdn123com_toutiao:csdn123_tip9}</th>
+        <th>{lang csdn123com_toutiao:csdn123_tip11}</th>
+        <th><a href="{$_G['siteurl']}{ADMINSCRIPT}?action=members&operation=search">{lang csdn123com_toutiao:csdn123_tip12}</a></th>
+      </tr>
+    {loop $user_list $user_listValue}
+    <tr class="hover">
+      <td class="td25"><input type="checkbox" name="uidarray[]" value="{eval echo dhtmlspecialchars($user_listValue['uid'])}" class="checkbox"></td>
+      <td class="td25">{eval echo dhtmlspecialchars($user_listValue['uid'])}</td>
+      <td><a href="{$_G['siteurl']}home.php?mod=space&uid={eval echo dhtmlspecialchars($user_listValue['uid'])}&do=profile" target="_blank">{eval echo dhtmlspecialchars($user_listValue['username'])}</a></td>
+      <td>{eval echo dhtmlspecialchars($user_listValue['username_mail'])}</td>
+      <td><a href="?{$server_url}&modifypic={eval echo dhtmlspecialchars($user_listValue['uid'])}&formhash={FORMHASH}"><img src="{eval echo avatar($user_listValue['uid'], 'small', TRUE, FALSE, TRUE)}" width="32" height="32" onerror="this.onerror=null;this.src='{$_G['setting']['ucenterurl']}/images/noavatar_middle.gif'" /></a></td>
+      <td>{eval echo dhtmlspecialchars($user_listValue['username_pwd'])}</td>
+      <td><a href="{$_G['siteurl']}{ADMINSCRIPT}?action=members&operation=edit&uid={eval echo dhtmlspecialchars($user_listValue['uid'])}">{lang csdn123com_toutiao:csdn123_tip67}</a></td>
+    </tr>
+    {/loop}
+    <tr>
+      <td colspan="7">
+      
+          <input name="chkall" id="chkall" type="checkbox" class="checkbox" onclick="checkAll('prefix', this.form, 'idarray', 'chkall')" />
+          <label for="chkall">{lang csdn123com_toutiao:csdn123_tip77}</label>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="submit" class="btn" id="submit_deletesubmit" name="deletesubmit" value="{lang csdn123com_toutiao:csdn123_tip13}"/>
+          
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  
+    <div class="pg" style="margin-top:32px;margin-bottom:32px;"> <a href="?{$prePage}&formhash={FORMHASH}">{lang csdn123com_toutiao:csdn123_tip46}</a> &nbsp;&nbsp;{$page}&nbsp;&nbsp; <a href="?{$nextPage}&formhash={FORMHASH}">{lang csdn123com_toutiao:csdn123_tip47}</a> </div>
+
+</form>
+
+

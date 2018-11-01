@@ -1,0 +1,30 @@
+<p class="follow_us">
+	<!--{if helper_access::check_module('follow')}-->
+		<a href="home.php?mod=follow&uid=$uid&do=view" class="xi2 new1">$space['feeds'] {lang follow}</a>
+		<a href="home.php?mod=follow&do=following&uid=$uid" class="xi2 new1">$space['following'] {lang follow_add}</a>
+		<a href="home.php?mod=follow&do=follower&uid=$uid" id="followernum_$uid" class="xi2 old1">$space['follower'] {lang follow_follower}</a>
+	<!--{/if}-->
+<!--{if !$viewself}-->
+	<div class="o cl">
+		<div class="follow_us" id="followflag" {if !isset($flag[$_G['uid']])}style="display: none"{/if}>
+			<!--{if helper_access::check_module('follow')}-->
+			<a href="home.php?mod=spacecp&ac=follow&op=add&hash={FORMHASH}&special={if $flag[$_G['uid']]['status'] == 1}2{else}1{/if}&fuid=$uid&from=head" class="{if $flag[$_G['uid']]['status'] == 1}new1{else}old1{/if}" id="specialflag_$uid" onclick="ajaxget(this.href);doane(event);" title="{if $flag[$_G['uid']]['status'] == 1}{lang follow_del_special_following}{else}{lang follow_add_special_following}{/if}"><!--{if $flag[$_G['uid']]['status'] == 1}-->{langfollow_del_special_following}<!--{else}-->{lang follow_add_special_following}<!--{/if}--></a>
+			<!--{/if}-->
+			<!--{if $flag[$_G['uid']]['mutual']}-->
+			<a class="new1">{lang follow_follower_mutual}</a>
+			<!--{else}-->
+			<a class="new1">{lang follow_followed}</a>
+			<!--{/if}-->
+			<a id="a_followmod_{$uid}" href="home.php?mod=spacecp&ac=follow&op=del&fuid=$uid&from=head" onclick="ajaxget(this.href);doane(event);" class="xi2 new1">{lang follow_del}</a>
+		</div>
+		<div class="follow_us" id="unfollowflag" {if isset($flag[$_G['uid']])}style="display: none"{/if}>
+			<!--{if isset($flag[$uid])}-->
+			<span class="z flw_status_1">{lang follow_user_followed}</span>
+			<!--{/if}-->
+			<!--{if helper_access::check_module('follow')}-->
+			<a id="a_followmod_{$uid}" href="home.php?mod=spacecp&ac=follow&op=add&hash={FORMHASH}&fuid=$uid&from=head" onclick="ajaxget(this.href);doane(event);" class="new1">{lang follow_add}</a>
+			<!--{/if}-->
+		</div>
+	</div>
+<!--{/if}-->
+</p>

@@ -1,0 +1,75 @@
+<!--{template common/header}-->
+<!--{eval $list = array();}-->
+<!--{eval $wheresql = category_get_wheresql($cat);}-->
+<!--{eval $list = category_get_list($cat, $wheresql, $page); }-->
+<!--{eval $pages = ceil($list['count']/$cat['perpage']); }-->
+<!-- header start -->
+<!--{eval $wg_title=$cat[catname];$wg_url='portal.php';}
+<!--{subtemplate common/header_dh}-->
+<!-- header end -->
+
+
+
+<!--{if $cat[subs]}-->
+<div class="forum-cat">
+	<div class="ttp">
+		<ul id="thread_types">
+			<li class="a"><a href="JavaScript:">{lang sub_category}</a></li>
+			<!--{loop $cat[subs] $value}-->
+				<li><a href="{echo getportalcategoryurl($value[catid])}">$value[catname]</a></li>
+			<!--{/loop}-->
+		</ul>
+	</div>
+</div>
+<!--{else}-->
+	<!--{if $cat[others]}-->
+	<div class="forum-cat">
+		<div class="ttp">
+			<ul id="thread_types">
+				<!--{loop $cat[others] $value}-->
+					<li <!--{if $cat[catid]==$value[catid]}-->class="a"<!--{/if}--> ><a href="{echo getportalcategoryurl($value[catid])}">$value[catname]</a></li>
+				<!--{/loop}-->
+			</ul>
+		</div>
+	</div>
+	<!--{/if}-->
+<!--{/if}-->
+<script language="javascript">
+var navleft = $('.forum-cat li.a').position().left + 80 - document.body.clientWidth;
+if(navleft){
+$('.ttp').scrollLeft(navleft);
+}
+</script> 
+<div class="post-list">
+	<div id="alist">
+
+			<!--{loop $list['list'] $post}-->
+				<!--{eval $highlight = article_title_style($post);}-->
+				<!--{eval $article_url = fetch_article_url($post); }-->
+				<!--{eval $article_count = C::t('portal_article_count')->fetch($post['aid']);
+                 if($article_count) $post= array_merge($article_count, $post);}-->
+				<div class="data data-{$post[aid]}">
+                 <a href="{$article_url}" title="{$post[title]}" >
+                        <dl class="s cl">
+                            {if $post[pic]}<dd class="m"><img src="{$post[pic]}"  alt="{$post[title]}"></dd>{/if}
+                            <dt>{$post[title]}</dt>
+                            <dd class="info cl"><span class="time z">{$post['dateline']}</span><span class="views y">{$mq_lang[views]}({$post[viewnum]})</span></dd>
+                         </dl>
+                    </a>
+                </div>
+			<!--{/loop}-->
+	</div>
+    <div id="ajaxshow"></div>
+</div>
+<div class="ajaxpg" id="a_pg">
+  <div id="ing">{lang muquan_mobile_s:ing}</div>
+  <div id="more">{lang muquan_mobile_s:more}</div>
+</div>
+<script type="text/javascript">
+var paged=$page,allpage=$pages,url='{$cat[caturl]}';
+</script>
+<script type="text/javascript" src="source/plugin/muquan_mobile_s/static/js/page.js"></script> 
+
+
+
+<!--{subtemplate common/footer}-->

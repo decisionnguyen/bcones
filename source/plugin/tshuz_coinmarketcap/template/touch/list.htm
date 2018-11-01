@@ -1,0 +1,65 @@
+<!--{template common/header}-->
+<link rel="stylesheet" type="text/css" href="source/plugin/tshuz_coinmarketcap/index.css" />
+<div class="dzlab_header">
+    {lang tshuz_coinmarketcap:qjhBbZ}
+</div>
+<style>
+body {background:#fff!important;}
+</style>
+<table cellpadding="0" cellspacing="0" class="table" style=" margin-top:60px;">
+  <thead>
+    <tr>
+      <th>{lang tshuz_coinmarketcap:nG88Kn}</th>
+      <th>{lang tshuz_coinmarketcap:D55828}</th>
+      <th style="width:30px">{lang tshuz_coinmarketcap:V3OQPR}</th>
+      </tr>
+  </thead>
+  <tbody id="xunihuobilist"><tr><td colspan="4"><div class="coin_load" style="display:block;"><div class="coin_loading"></div>{lang tshuz_coinmarketcap:Tz71Vv}</div></td></tr></tbody>
+</table>
+<script>
+loadXnData();
+function loadXnData() {
+    var cash = "{$pvars[covert]}";
+    var size = "{$pvars[num]}";
+	var cashCode = "{$pvars[code]}";
+	var ajaxurl ="https://api.coinmarketcap.com/v1/ticker/?convert=" + cash + "&limit=" + size;
+	ajaxurl = ajaxurl.replace('amp;','');
+    $.get(ajaxurl, {},
+    function(data, status, xhr) {
+        $("#xunihuobilist").html("");
+        var html = "";
+        for (var i = 0; i < data.length; i++) {
+            html = "<tr style='border-bottom:1px solid #eeeeee;height:35px;'>";
+            html += "<td style='color:#468BCA;font-weight:bold'>"+'<a href="plugin.php?id=tshuz_coinmarketcap&mod=view&coin='+data[i]['name'].toLowerCase().replace(' ', '-')+'" style="color:#468BCA">'+"<div class=\"s-s-" + data[i]["name"].toLowerCase().replace(' ', '-') + " coin-logo\"></div>" + data[i]["name"] + "</a></td>";
+            html += "<td style='color:#468BCA'>"+cashCode + toThousands(data[i]["price_" + cash].match(/^\d+(?:\.\d{0,2})?/) ) + "(";
+            if (data[i]["percent_change_24h"] < 0) {
+                html += "<font style='color:red'>" + data[i]["percent_change_24h"] + "%</font>)</td>";
+            } else {
+                html += "<font style='color:#009933'>" + data[i]["percent_change_24h"] + "%</font>)</td>";
+            }
+			html += '<td><a href="plugin.php?id=tshuz_coinmarketcap&mod=view&coin='+data[i]['name'].toLowerCase().replace(' ', '-')+'" style="color:#468BCA">{lang tshuz_coinmarketcap:t4M9VU}</a></td>'
+            html += "</tr>";
+            $("#xunihuobilist").append(html);
+        }
+    },
+    "json");
+}
+function toThousands(num) {
+    var num = (num || 0).toString(), result = '';
+	var numArr = num.split(".");
+	num = numArr[0];
+    while (num.length > 3) {
+        result = ',' + num.slice(-3) + result;
+        num = num.slice(0, num.length - 3);
+    }
+    if (num) { result = num + result; }
+	if(numArr[1])
+	result = result+'.'+numArr[1];
+    return result;
+}
+<!--{if $pvars[second]}-->
+window.setInterval(loadXnData, {$pvars[second]}000);
+<!--{/if}-->
+</script>
+{eval $nofooter=1;}
+<!--{template common/footer}-->

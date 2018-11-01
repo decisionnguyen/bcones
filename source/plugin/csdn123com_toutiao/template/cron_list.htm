@@ -1,0 +1,43 @@
+<table class="tb tb2 nobdb">
+  <tbody>
+    <tr class="hover" height="60">
+      <td colspan="5">
+      	<a class="addtr" href="?{$server_url}&cron_add=yes&formhash={FORMHASH}">{lang csdn123com_toutiao:csdn123_tip83}</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="addtr" href="{$csdn123_cronUrl}">{lang csdn123com_toutiao:csdn123_tip135}</a>
+      </td>
+    </tr>
+    
+    <tr class="header">
+      <th>{lang csdn123com_toutiao:csdn123_tip84}</th>
+      <th>{lang csdn123com_toutiao:csdn123_tip70}</th>
+      <th>{lang csdn123com_toutiao:csdn123_tip85}</th>
+      <th>{lang csdn123com_toutiao:csdn123_tip86}</th>
+      <th>&nbsp;&nbsp;</th>
+    </tr>
+    
+    <!--{loop $postRs $post}-->    
+    <tr class="hover">
+      <td>{$post['keyword']}</td>
+      <td><!--{eval echo getclassname($post['typeid'],$post['fid'],$post['portal'],$post['forum_portal'])}--></td>
+      <td>{$post['catchnum']}</td>
+      <td><!--{if $post['catchtime']>0}-->{date($post['catchtime'])}<!--{/if}--></td>
+      <td><a href="?{$server_url}&modify={$post['ID']}&formhash={FORMHASH}">{lang csdn123com_toutiao:csdn123_tip67}</a> &nbsp;|&nbsp; <a href="?{$server_url}&del={$post['ID']}&formhash={FORMHASH}">{lang csdn123com_toutiao:csdn123_tip69}</a></td>
+    </tr>    
+    <!--{/loop}-->
+    
+    <tr>
+    	<td colspan="5">
+        
+            <div style="margin-top:16px;margin-bottom:16px;line-height:28px">
+            {lang csdn123com_toutiao:csdn123_tip136}{$cronUrl}<br>
+            {lang csdn123com_toutiao:csdn123_tip137}<br>
+			{lang csdn123com_toutiao:csdn123_tip156}<a href="http://user.qzone.qq.com/155120699/blog/1497412177" target="_blank">http://user.qzone.qq.com/155120699/blog/1497412177</a>
+            </div>
+        
+        </td>
+    </tr>
+    
+  </tbody>
+</table>
+

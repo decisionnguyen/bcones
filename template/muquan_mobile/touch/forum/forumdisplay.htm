@@ -1,0 +1,161 @@
+<!--{template common/header}-->
+<style>
+.footer{ margin-bottom:48px;}
+</style>
+<!-- header start -->
+<header class="header">
+    <div class="nav">
+		<ul class="h-right h-icon">
+        	<li><a href="javascript:;" id="side_open" class="nav-btn y"><i class="icon iconfont">&#xe700;</i><p>{$mq_lang[nav]}</p></a></li>  
+		</ul>
+        <ul class="h-left h-icon">
+           <li><a href="forum.php?forumlist=1"><i class="iconfont">&#xe697;</i><em>{$mq_lang[back]}</em></a></li>
+        </ul>
+		<h2 class="category">
+			<!--{if $subexists && $_G['page'] == 1}-->
+			<span class="display name vm" href="#subname_list">
+				<h2 class="tit"><!--{eval echo strip_tags($_G['forum']['name']) ? strip_tags($_G['forum']['name']) : $_G['forum']['name'];}--><i class="iconfont">&#xe6a6;</i></h2>
+			</span>
+			<div id="subname_list" class="subname_list" display="true" style="display:none;">
+				<ul>
+				<!--{loop $sublist $sub}-->
+				<li>
+					<a href="forum.php?mod=forumdisplay&fid={$sub[fid]}">{$sub['name']}</a>
+				</li>
+				<!--{/loop}-->
+				</ul>
+			</div>
+			<!--{else}-->
+			<span class="name">
+				<!--{eval echo strip_tags($_G['forum']['name']) ? strip_tags($_G['forum']['name']) : $_G['forum']['name'];}-->
+			</span>
+			<!--{/if}-->
+		</h2>
+    </div>
+</header>
+<!-- header end -->
+
+<!--{hook/forumdisplay_top_mobile}-->
+<!-- main threadlist start -->
+<!--{if !$subforumonly}-->
+
+
+<!--<div class="forumlist-nav cl">
+    <div class="box z">
+        <a href="forum.php?forumlist=1&mobile=2" title="{$mq_lang[forum]}">{$mq_lang[forum]}</a> 
+        <em> <i class="iconfont">&#xe60a;</i></em> <a href="forum.php?mod=forumdisplay&fid={$_G['forum']['fid']}&mobile=2">{$_G['forum']['name']}</a> 
+        <em><i class="iconfont">&#xe60a;</i></em> 
+        <em>{$mq_lang[all]}</em>
+   </div>
+</div>
+<div class="">
+	<a href="forum.php?mod=forumdisplay&fid=$_G[fid]" class="xi2{if $_GET['filter'] == 'lastpost'} xw1{/if}">{$mq_lang[all]}</a>				
+    <a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=lastpost&orderby=lastpost$forumdisplayadd[lastpost]" class="xi2{if $_GET['filter'] == 'lastpost'} xw1{/if}">{lang latest}</a>
+    <a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=heat&orderby=heats$forumdisplayadd[heat]" class="xi2{if $_GET['filter'] == 'heat'} xw1{/if}">{lang order_heats}</a>
+    <a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=hot" class="xi2{if $_GET['filter'] == 'hot'} xw1{/if}">{lang hot_thread}</a>
+    <a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=digest&digest=1$forumdisplayadd[digest]" class="xi2{if $_GET['filter'] == 'digest'} xw1{/if}">{lang digest_posts}</a>
+</div>-->
+
+
+<!--{if ($_G['forum']['threadtypes'] && $_G['forum']['threadtypes']['listable']) || count($_G['forum']['threadsorts']['types']) > 0}-->
+<div class="forum-cat">
+	<div class="ttp">
+        <ul id="thread_types">
+            <li id="ttp_all" {if !$_GET['typeid'] && !$_GET['sortid']}class="xw1 a"{/if}><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_G['forum']['threadsorts']['defaultshow']}&filter=sortall&sortall=1{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">{lang forum_viewall}</a></li>
+            <!--{if $_G['forum']['threadtypes']}-->
+                <!--{loop $_G['forum']['threadtypes']['types'] $id $name}-->
+                    <!--{if $_GET['typeid'] == $id}-->
+                    <li class="xw1 a"><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">$name</a></li>
+                    <!--{else}-->
+                    <li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=typeid&typeid=$id$forumdisplayadd[typeid]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">$name</a></li>
+                    <!--{/if}-->
+                <!--{/loop}-->
+            <!--{/if}-->
+
+            <!--{if $_G['forum']['threadsorts']}-->
+                <!--{if $_G['forum']['threadtypes']}--><li><span class="pipe">|</span></li><!--{/if}-->
+                <!--{loop $_G['forum']['threadsorts']['types'] $id $name}-->
+                    <!--{if $_GET['sortid'] == $id}-->
+                    <li class="xw1 a"><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">$name</a></li>
+                    <!--{else}-->
+                    <li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$id$forumdisplayadd[sortid]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">$name</a></li>
+                    <!--{/if}-->
+                <!--{/loop}-->
+            <!--{/if}-->
+
+        </ul>
+    </div>
+</div>
+<!--{/if}-->
+
+<script language="javascript">
+var navleft = $('.forum-cat li.a').position().left + 80 - document.body.clientWidth;
+if(navleft){
+$('.ttp').scrollLeft(navleft);
+}
+</script> 
+<div class="threadlist list" style="background:#f4f4f4;">
+			<!--{if $_G['forum_threadcount']}-->
+			  <div id="alist">
+				<!--{loop $_G['forum_threadlist'] $key $thread}-->
+                    <!--{if !$_G['setting']['mobile']['mobiledisplayorder3'] && $thread['displayorder'] > 0}-->
+						{eval continue;}
+					<!--{/if}-->
+                	<!--{if $thread['displayorder'] > 0 && !$displayorder_thread}-->
+                		{eval $displayorder_thread = 1;}
+                    <!--{/if}-->
+					<!--{if $thread['moved']}-->
+						<!--{eval $thread[tid]=$thread[closed];}-->
+					<!--{/if}-->
+                    <div class="data">
+                    	<!--{hook/forumdisplay_thread_mobile $key}-->
+                        <a href="forum.php?mod=viewthread&tid={$thread[tid]}" >
+                            <div class="info">
+                                <div class="au">
+                                    <em class="tx"><!--{avatar($thread[authorid],small)}--></em>
+                                    <p>
+                                        <span style="font-size:13px; color:#666">{$thread[author]}</span>
+                                         <!--{if in_array($thread['displayorder'], array(1, 2, 3, 4))}-->
+                                            <i class="ico_top ico">{lang muquan_forum_pic:top}</i>
+                                        <!--{elseif $thread['digest'] > 0}-->
+                                            <i class="ico_des ico">{lang muquan_forum_pic:dig}</i>
+                                        <!--{elseif $thread['rate'] > 0}-->
+                                            <i class="ico_rate ico">{lang muquan_forum_pic:rate}</i>
+                                        <!--{/if}-->
+                                    </p>
+                                    <p><span style="font-size: 11px;color: #999;">{$thread[dateline]}</span></p>
+                                </div>
+                                <span class="num"><i class="iconfont">&#xe60c;</i>
+                                <!--{if $mq_forum['vc']==1}-->{$thread[views]}<!--{else}-->{$thread[replies]}<!--{/if}--></span>
+                            </div>
+                            <h2>{$thread[subject]}</h2>
+                           <!--{hook/forumdisplay_threadsimglist $key}-->
+                        </a>
+                    </div>
+                <!--{/loop}-->
+                	<div id="ajaxshow"></div>
+                </div>
+            <!--{else}-->
+			<div class="no">{lang forum_nothreads}</div>
+			<!--{/if}-->
+</div>
+
+
+<div class="ajaxpg" id="a_pg">
+	 <div id="ing">{$mq_lang[ing]}</div>
+	 <div id="more">{$mq_lang[more]}</div>
+</div>
+<!--{/if}-->
+<!-- main threadlist end -->
+<div class="bottom-bar-hide"></div>
+<div class="bottom-bar">
+    <a href="forum.php?mod=post&action=newthread&fid=$_G[fid]"><i class="iconfont">&#xe69e;</i><span>{$mq_lang[zai]}{$_G['forum']['name']}{$mq_lang[post]}</span></a>
+</div>
+<script type="text/javascript"> 
+<!--{eval $pages=ceil($_G['forum_threadcount']/$_G['tpp']);}-->
+var paged=$_G['page'],allpage=$pages,auto=1,url='forum.php?mod=forumdisplay&fid={$_G[fid]}&filter={$filter}&orderby={$_GET[orderby]}{$forumdisplayadd[page]}&{$multipage_archive}',urlcon='&';
+</script>
+<script type="text/javascript" src="template/muquan_mobile/touch/static/js/page.js"></script>
+<!--{hook/forumdisplay_bottom_mobile}-->
+<div class="pullrefresh" style="display:none;"></div>
+<!--{template common/footer}-->

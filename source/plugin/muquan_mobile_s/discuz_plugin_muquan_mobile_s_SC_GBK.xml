@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X3,X3.1,X3.2,X3.3,X3.4]]></item>
+	<item id="Time"><![CDATA[2018-03-09 11:39]]></item>
+	<item id="From"><![CDATA[ÏîÄ¿20180115 (http://192.168.0.102/yewu/20160330dz/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[º¬ÃÅ»§ÊÖ»úÄ£°åÉèÖÃ]]></item>
+			<item id="identifier"><![CDATA[muquan_mobile_s]]></item>
+			<item id="description"><![CDATA[º¬ÃÅ»§ÊÖ»úÄ£°åÉèÖÃ²å¼þ£¬Ä¾ÈªÍøº¬ÃÅ»§ÊÖ»úÄ£°åÅäÌ×²å¼þ]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[muquan_mobile_s/]]></item>
+			<item id="copyright"><![CDATA[Ä¾ÈªÍø(http://www.muquan.net)]]></item>
+			<item id="version"><![CDATA[1.0]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[m]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[28]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X3,X3.1,X3.2,X3.3,X3.4]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[ÅäÉ«]]></item>
+				<item id="description"><![CDATA[ÊÖ»ú°æÖ÷ÌâÑÕÉ«ÉèÖÃ£¬Ä¬ÈÏÎª#f65d5b£¬¿ÉÒÔÔÚÑ¡É«°åÖÐÑ¡Ôñ£¬Ò²¿ÉÒÔÖ±½ÓÊäÈë16½øÖÆÉ«Öµ]]></item>
+				<item id="variable"><![CDATA[m_color]]></item>
+				<item id="type"><![CDATA[color]]></item>
+				<item id="value"><![CDATA[#f15b5a]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[logo]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[logo]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[template/muquan_mobile/touch/static/images/logo.png]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[Ä¬ÈÏÊ×Ò³]]></item>
+				<item id="description"><![CDATA[´ò¿ªÍøÕ¾ÓòÃûÄ¬ÈÏ½øÈëµÄÒ³Ãæ]]></item>
+				<item id="variable"><![CDATA[home]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[portal]]></item>
+				<item id="extra"><![CDATA[portal=ÃÅ»§
+forum=ÂÛÌ³
+guide=µ¼¶Á]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[ÂÛÌ³Ê×Ò³Êý¾ÝÀ´Ô´]]></item>
+				<item id="description"><![CDATA[ÂÛÌ³Ê×Ò³Êý¾ÝÀ´Ô´°å¿é£¬Ñ¡Ôñ¿ÕµÄÊ±ºòÊä³öËùÓÐ°å¿éÊý¾Ý]]></item>
+				<item id="variable"><![CDATA[m_data]]></item>
+				<item id="type"><![CDATA[forums]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[]]></item>
+				</item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[ÂÛÌ³Ê×Ò³ÅÅÐò¹æÔò]]></item>
+				<item id="description"><![CDATA[ÂÛÌ³Ê×Ò³ÆÙ²¼Á÷Ìû×ÓÅÅÐòµÄ¹æÔò]]></item>
+				<item id="variable"><![CDATA[m_order]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[1=×îÐÂ·¢²¼
+2=×îÐÂ»Ø¸´
+3=×î¶àÆÀÂÛ
+4=×î¶àä¯ÀÀ]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[Ê×Ò³Ã¿Ò³Ìû×ÓÊý]]></item>
+				<item id="description"><![CDATA[Ê×Ò³ÆÙ²¼Á÷Ã¿´Î¼ÓÔØµÄÊý¾ÝÌõÊý£¬½¨Òé5-15Ìõ£¬Ä¬ÈÏ10Ìõ¡£]]></item>
+				<item id="variable"><![CDATA[m_num]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[10]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[ÃÅ»§Ê×Ò³»ÃµÆÆ¬]]></item>
+				<item id="description"><![CDATA[Ò»ÐÐÒ»ÕÅ»ÃµÆÆ¬£¬¸ñÊ½Îª£ºÍ¼Æ¬µØÖ·:ÎÄ×Ö:Á´½Ó£»ÆäÖÐÍ¼Æ¬¿ÉÒÔÌîÐ´Ïà¶ÔÂ·¾¶Ò²¿ÉÒÔÌîÐ´¾ø¶ÔÂ·¾¶]]></item>
+				<item id="variable"><![CDATA[portal_banner]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[template/muquan_mobile/touch/static/images/banner/1.jpg:Î¢ÐÅÐ¡³ÌÐòAPI »ñÈ¡Ð¡³ÌÐòÒ³Ãæ¶þÎ¬Âë:forum.php
+template/muquan_mobile/touch/static/images/banner/1.jpg:Î¢ÐÅÐ¡³ÌÐòAPI »ñÈ¡Ð¡³ÌÐòÒ³Ãæ¶þÎ¬Âë:forum.php
+template/muquan_mobile/touch/static/images/banner/1.jpg:Î¢ÐÅÐ¡³ÌÐòAPI »ñÈ¡Ð¡³ÌÐòÒ³Ãæ¶þÎ¬Âë:forum.php]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[ÃÅ»§Í·ÌõÎÄ×Ö]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[top_txt]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[Î»ÓÚ¶«ÂíÀ´Î÷ÑÇµÄÏÉ±¾ÄÇÒòÎªÆäÌØ±ðÊÊºÏ]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="8">
+				<item id="displayorder"><![CDATA[7]]></item>
+				<item id="title"><![CDATA[ÃÅ»§Í·ÌõÁ´½Ó]]></item>
+				<item id="description"><![CDATA[µã»÷ÃÅ»§Í·Ìõ½øÈëµÄÍøÖ·Á´½Ó]]></item>
+				<item id="variable"><![CDATA[top_url]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[#]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="9">
+				<item id="displayorder"><![CDATA[8]]></item>
+				<item id="title"><![CDATA[ÃÅ»§µ¼º½]]></item>
+				<item id="description"><![CDATA[ÃÅ»§Ê×Ò³»ÃµÆÆ¬ÏÂµ¼º½ÐÅÏ¢£¬Ò»ÐÐÒ»¸öµ¼º½°´Å¥£¬¸ñÊ½Îª£ºÍ¼Æ¬µØÖ·:ÎÄ×Ö:Á´½Ó£»ÆäÖÐÍ¼Æ¬¿ÉÒÔÌîÐ´Ïà¶ÔÂ·¾¶Ò²¿ÉÒÔÌîÐ´¾ø¶ÔÂ·¾¶]]></item>
+				<item id="variable"><![CDATA[portal_nav]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[template/muquan_mobile/touch/static/images/icon1.png:ÈÈµã:#
+template/muquan_mobile/touch/static/images/icon2.png:Î»ÖÃ:#
+template/muquan_mobile/touch/static/images/icon3.png:ÊÓÆµ:#
+template/muquan_mobile/touch/static/images/icon4.png:Êý¾Ý:#
+template/muquan_mobile/touch/static/images/icon5.png:½±Àø:#]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="10">
+				<item id="displayorder"><![CDATA[9]]></item>
+				<item id="title"><![CDATA[²à±ßµ¼º½]]></item>
+				<item id="description"><![CDATA[²à±ßµ¼º½ÉèÖÃ£¬Ò»ÐÐÒ»¸öµ¼º½²Ëµ¥£¬¸ñÊ½Îª ÎÄ×Ö:Á´½Ó¡£]]></item>
+				<item id="variable"><![CDATA[nav]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[ÃÅ»§Ê×Ò³:forum.php?module=portal
+ÂÛÌ³Ê×Ò³:forum.php?module=forum
+ÂÛÌ³°æ¿é:forum.php?forumlist=1
+Ö÷Ìâµ¼¶Á:forum.php?mod=guide&view=newthread
+×Ô¶¨Òå:#]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="announcements"><![CDATA[¹«¸æ]]></item>
+				<item id="top"><![CDATA[ÖÃ¶¥]]></item>
+				<item id="gong"><![CDATA[¹²]]></item>
+				<item id="zhang"><![CDATA[ÕÅ]]></item>
+				<item id="rate"><![CDATA[ÍÆ¼ö]]></item>
+				<item id="tu"><![CDATA[Í¼Æ¬]]></item>
+				<item id="ing"><![CDATA[¼ÓÔØÖÐ...]]></item>
+				<item id="more"><![CDATA[¼ÓÔØ¸ü¶à]]></item>
+				<item id="new_article"><![CDATA[×îÐÂÎÄÕÂ]]></item>
+				<item id="home"><![CDATA[Ê×Ò³]]></item>
+				<item id="dig"><![CDATA[¾«»ª]]></item>
+				<item id="sens"><![CDATA[ÏûÏ¢·¢ËÍ³É¹¦£¡]]></item>
+				<item id="my"><![CDATA[ÎÒµÄ]]></item>
+				<item id="thread"><![CDATA[Ö÷Ìâ]]></item>
+				<item id="reply"><![CDATA[»Ø¸´]]></item>
+				<item id="pm"><![CDATA[ÏûÏ¢]]></item>
+				<item id="profile"><![CDATA[×ÊÁÏ]]></item>
+				<item id="forum"><![CDATA[ÂÛÌ³]]></item>
+				<item id="portal"><![CDATA[ÃÅ»§]]></item>
+				<item id="forums"><![CDATA[°æ¿é]]></item>
+				<item id="guide"><![CDATA[µ¼¶Á]]></item>
+				<item id="all"><![CDATA[È«²¿]]></item>
+				<item id="back"><![CDATA[·µ»Ø]]></item>
+				<item id="zai"><![CDATA[ÔÚ]]></item>
+				<item id="post"><![CDATA[·¢Ìû]]></item>
+				<item id="views"><![CDATA[ÔÄ¶Á]]></item>
+				<item id="nav"><![CDATA[µ¼º½]]></item>
+				<item id="posts"><![CDATA[Ìû×Ó]]></item>
+				<item id="subs"><![CDATA[ÏÂ¼¶·ÖÀà]]></item>
+				<item id="new_comment"><![CDATA[×îÐÂÆÀÂÛ]]></item>
+				<item id="post_comment"><![CDATA[·¢²¼ÆÀÂÛ]]></item>
+				<item id="relatedposts"><![CDATA[ÍÆ¼öÎÄÕÂ]]></item>
+				<item id="wecome"><![CDATA[»¶Ó­Äú£¬]]></item>
+				<item id="login"><![CDATA[µãÎÒµÇÂ¼]]></item>
+				<item id="go_login"><![CDATA[µã»÷µÇÂ¼]]></item>
+				<item id="no_login"><![CDATA[Äú»¹Ã»µÇÂ¼]]></item>
+				<item id="no_comment"><![CDATA[- ÔÝÎÞÆÀÂÛ£¬¿ìÇÀÉ³·¢ -]]></item>
+			</item>
+		</item>
+	</item>
+</root>

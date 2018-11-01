@@ -1,0 +1,27 @@
+<div class="footer_nav_hide"></div>
+<div class="footer_nav">
+    <a href="portal.php" <!--{if ($_G['basescript']=='portal') || ($_G['basescript']=='forum' && $md=='portal')}--> class="on"<!--{/if}-->>
+        <i class="iconfont">&#xe6da;</i>
+        <span>{$mq_lang[portal]}</span>
+    </a>
+
+    <a href="forum.php?module=forum" <!--{if ($_G['basescript']=='forum' && $_GET[forumlist]!=1 && CURMODULE!='guide' && $md!='portal' )}--> class="on"<!--{/if}-->>
+        <i class="iconfont">&#xe69b;</i>
+        <span>{$mq_lang[forum]}</span>
+    </a>
+
+    <a href="forum.php?forumlist=1" <!--{if $_GET[forumlist]==1}-->class="on"<!--{/if}-->>
+        <i class="iconfont">&#xe696;</i>
+        <span>{$mq_lang[forums]}</span>
+    </a>
+
+    <a href="forum.php?mod=guide&view=newthread" <!--{if CURMODULE=='guide'}-->class="on"<!--{/if}-->>
+        <i class="iconfont">&#xe6fb;</i>
+        <span>{$mq_lang[guide]}</span>
+    </a>
+
+    <a href="home.php?mod=space&uid={$_G[uid]}&do=profile&mycenter=1&module=index">
+        <i class="iconfont">&#xe6b8;</i>
+        <span>{$mq_lang[my]}</span>
+    </a>
+</div>

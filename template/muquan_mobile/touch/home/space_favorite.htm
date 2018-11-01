@@ -1,0 +1,46 @@
+<!--{template common/header}-->
+
+<!-- header start -->
+<!--{if $_GET['type'] == 'forum'}-->
+<!--{eval $wg_title='{lang favforum}'; }
+<!--{else}-->
+<!--{eval $wg_title='{lang favthread}'; }
+<!--{/if}-->
+<!--{eval $wg_url='home.php?mod=space&uid='.$_G[uid].'&do=profile&mycenter=1'; }
+<!--{subtemplate common/header_dh}-->
+<!-- header end -->
+<!-- userinfo start -->
+<div class="userinfo">
+      <!--{subtemplate home/space_userinfo}-->
+</div>
+<!-- main collectlist start -->
+<!--{if $_GET['type'] == 'forum'}-->
+<div class="coll_list b_radius">
+	<ul>
+		<!--{if $list}-->
+			<!--{loop $list $k $value}-->
+			<li><a href="$value[url]">$value[title]</a></li>
+			<!--{/loop}-->
+		<!--{else}-->
+		<li>{lang no_favorite_yet}</li>
+		<!--{/if}-->
+
+	</ul>
+</div>
+<!--{else}-->
+<div class="threadlist">
+	<ul>
+		<!--{if $list}-->
+			<!--{loop $list $k $value}-->
+			<li><a href="$value[url]">$value[title]</a></li>
+			<!--{/loop}-->
+		<!--{else}-->
+		<li style="padding:0 10px;">{lang no_favorite_yet}</li>
+		<!--{/if}-->
+	</ul>
+</div>
+<!--{/if}-->
+<!-- main collectlist end -->
+$multi
+<!--{eval $nofooter = true;}-->
+<!--{template common/footer}-->

@@ -1,0 +1,72 @@
+<form name="cpform" method="post" autocomplete="off" action="?{$server_url}&selall=yes" id="cpform">
+  <input type="hidden" name="formhash" id="formhash" value="{FORMHASH}" />
+  <input type="hidden" name="page" value="{$page}" />
+  <table class="tb tb2 nobdb">
+    <tbody>
+      <tr class="hover" height="60">
+        <td>&nbsp;</td>
+        <td>
+        
+        <a class="addtr" href="?{$server_url}&getrecord=yes&formhash={FORMHASH}">{lang csdn123com_toutiao:csdn123_tip42}</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="addtr" href="?{$server_url}&sendfail=yes&formhash={FORMHASH}" style="background-position-y:-286px">{lang csdn123com_toutiao:csdn123_tip160}</a>
+        
+        </td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr class="header">
+        <th>&nbsp;&nbsp;</th>
+        <th>{lang csdn123com_toutiao:csdn123_tip41}</th>
+        <th>{lang csdn123com_toutiao:csdn123_tip70}</th>
+        <th>{lang csdn123com_toutiao:csdn123_tip130}</th>
+        <th>&nbsp;&nbsp;</th>
+      </tr>
+
+      <!--{loop $postRs $post}-->
+      
+      <tr class="hover">
+        <td><input type="checkbox" value="{$post['ID']}" name="idarray[]" /></td>
+        <td><a href="{$post['fromurl']}" target="_blank">{$post['subject']}</a></td>
+        <td><!--{eval echo getclassname($post['typeid'],$post['fid'],$post['portal'],$post['forum_portal'])}--></td>
+        <td><!--{if $post['tid_aid']=='-1'}--><span style="color:red">{lang csdn123com_toutiao:csdn123_tip132}</span><!--{else}-->{lang csdn123com_toutiao:csdn123_tip131}<!--{/if}--></td>
+        <td id="myid{$post['ID']}">
+        
+        	<a href="?{$server_url}&update_id={$post['ID']}&page={$page}&formhash={FORMHASH}">{lang csdn123com_toutiao:csdn123_tip67}</a>&nbsp;|&nbsp; 
+            <a href="?{$server_url}&import_id={$post['ID']}&page={$page}&formhash={FORMHASH}" onClick="importtobbs('myid{$post['ID']}')">{lang csdn123com_toutiao:csdn123_tip68}</a>&nbsp;|&nbsp; 
+            <a href="?{$server_url}&del={$post['ID']}&page={$page}&formhash={FORMHASH}">{lang csdn123com_toutiao:csdn123_tip69}</a>
+            
+        </td>
+      </tr>
+      
+      <!--{/loop}-->
+      
+      <tr>
+        <td colspan="5">
+        
+          <div style="margin:8px 0;">
+
+                <input name="chkall" id="chkall" type="checkbox" class="checkbox" onclick="checkAll('prefix', this.form, 'idarray', 'chkall')" />
+                <label for="chkall">{lang csdn123com_toutiao:csdn123_tip77}</label>
+                &nbsp;&nbsp;
+                <input type="submit" value="{lang csdn123com_toutiao:csdn123_tip78}" name="selimport" class="btn" id="selimport" onClick="this.value='{lang csdn123com_toutiao:csdn123_tip81}'" />
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" value="{lang csdn123com_toutiao:csdn123_tip79}" name="seldelete" class="btn" />
+            
+           </div>
+          
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pg" style="margin-top:16px;"> <a href="?{$prePage}&formhash={FORMHASH}">{lang csdn123com_toutiao:csdn123_tip46}</a> &nbsp;&nbsp;{$page}&nbsp;&nbsp; <a href="?{$nextPage}&formhash={FORMHASH}">{lang csdn123com_toutiao:csdn123_tip47}</a> </div>
+</form>
+<script>
+function importtobbs(myid)
+{
+
+	document.getElementById(myid).innerHTML='<span style="color:red">{lang csdn123com_toutiao:csdn123_tip81}</span>';
+
+}
+</script>

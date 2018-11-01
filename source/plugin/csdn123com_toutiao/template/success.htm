@@ -1,0 +1,47 @@
+<form name="cpform" method="post" autocomplete="off" action="?{$server_url}&selall=yes" id="cpform">
+  <input type="hidden" name="formhash" id="formhash" value="{FORMHASH}" />
+  <input type="hidden" name="page" value="{$page}" />
+  <table class="tb tb2 nobdb">
+    <tbody>
+      <tr class="header">
+        <th>&nbsp;&nbsp;</th>
+        <th>&nbsp;&nbsp;</th>
+        <th>{lang csdn123com_toutiao:csdn123_tip41}</th>
+        <th>{lang csdn123com_toutiao:csdn123_tip70}</th>
+        <th>{lang csdn123com_toutiao:csdn123_tip134}</th>        
+        <th>{lang csdn123com_toutiao:csdn123_tip122}</th>
+        <th>&nbsp;&nbsp;</th>
+      </tr>
+      
+      <!--{loop $postRs $post}-->
+      
+      <tr class="hover">
+        <td><input type="checkbox" value="{$post['ID']}" name="idarray[]" /></td>
+        <td><a href="{eval echo preview_url($post['forum_portal'],$post['tid_aid']);}" target="_blank">{lang csdn123com_toutiao:csdn123_tip44}</a></td>
+        <td><a href="{$post['fromurl']}" target="_blank">{$post['subject']}</a></td>
+        <td><!--{eval echo getclassname($post['typeid'],$post['fid'],$post['portal'],$post['forum_portal'])}--></td>
+        <td><!--{date($post['send_datetime'])}--></td>
+        <td><!--{if $post['catch_way']=='autocatch'}-->{lang csdn123com_toutiao:csdn123_tip124}<!--{else}-->{lang csdn123com_toutiao:csdn123_tip123}<!--{/if}--></td>
+        <td>
+        	<a href="?{$server_url}&seo_id={$post['ID']}&page={$page}&formhash={FORMHASH}">{lang csdn123com_toutiao:csdn123_tip147}</a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+        	<a href="?{$server_url}&del={$post['ID']}&page={$page}&formhash={FORMHASH}">{lang csdn123com_toutiao:csdn123_tip13}</a>
+        </td>
+      </tr>
+      
+      <!--{/loop}-->
+      
+      <tr>
+        <td colspan="7"><div style="margin:8px 0;">
+            <input name="chkall" id="chkall" type="checkbox" class="checkbox" onclick="checkAll('prefix', this.form, 'idarray', 'chkall')" />
+            <label for="chkall">{lang csdn123com_toutiao:csdn123_tip77}</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" value="{lang csdn123com_toutiao:csdn123_tip79}" name="seldelete" class="btn" />
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" value="{lang csdn123com_toutiao:csdn123_tip163}" name="selpostbaidu" class="btn" onClick="this.value='{lang csdn123com_toutiao:csdn123_tip164}'" />
+          </div></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pg" style="margin-top:16px;"> <a href="?{$prePage}&formhash={FORMHASH}">{lang csdn123com_toutiao:csdn123_tip46}</a> &nbsp;&nbsp;{$page}&nbsp;&nbsp; <a href="?{$nextPage}&formhash={FORMHASH}">{lang csdn123com_toutiao:csdn123_tip47}</a> </div>
+</form>

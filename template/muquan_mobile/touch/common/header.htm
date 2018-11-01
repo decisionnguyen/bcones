@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={CHARSET}">
+<meta http-equiv="Cache-control" content="{if $_G['setting']['mobile'][mobilecachetime] > 0}{$_G['setting']['mobile'][mobilecachetime]}{else}no-cache{/if}" />
+<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no" />
+<title><!--{if !empty($navtitle)}-->$navtitle - <!--{/if}--><!--{if empty($nobbname)}--> $_G['setting']['bbname'] - <!--{/if}--> {lang waptitle}</title>
+<meta name="keywords" content="{if !empty($metakeywords)}{echo dhtmlspecialchars($metakeywords)}{/if}" />
+<meta name="description" content="{if !empty($metadescription)}{echo dhtmlspecialchars($metadescription)} {/if},$_G['setting']['bbname']" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="{$_G['setting']['bbname']}">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<!--{if $_G['basescript']=='portal'}--><base href="{$_G[siteurl]}" /><!--{/if}-->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="template/muquan_mobile/touch/static/images/ico72.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="template/muquan_mobile/touch/static/images/ico144.png">
+<link rel="apple-touch-icon-precomposed" href="template/muquan_mobile/touch/static/images/ico.png">
+<link rel="stylesheet" href="{STATICURL}image/mobile/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="template/muquan_mobile/touch/static/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="template/muquan_mobile/touch/static/font/iconfont.css" type="text/css" media="all">
+<script src="template/muquan_mobile/touch/static/js/jquery-1.8.3.min.js?{VERHASH}"></script>
+<script type="text/javascript">var STYLEID = '{STYLEID}', STATICURL = '{STATICURL}', IMGDIR = '{IMGDIR}', VERHASH = '{VERHASH}', charset = '{CHARSET}', discuz_uid = '$_G[uid]', cookiepre = '{$_G[config][cookie][cookiepre]}', cookiedomain = '{$_G[config][cookie][cookiedomain]}', cookiepath = '{$_G[config][cookie][cookiepath]}', showusercard = '{$_G[setting][showusercard]}', attackevasive = '{$_G[config][security][attackevasive]}', disallowfloat = '{$_G[setting][disallowfloat]}', creditnotice = '<!--{if $_G['setting']['creditnotice']}-->$_G['setting']['creditnames']<!--{/if}-->', defaultstyle = '$_G[style][defaultextstyle]', REPORTURL = '$_G[currenturl_encode]', SITEURL = '$_G[siteurl]', JSPATH = '$_G[setting][jspath]';</script>
+<script src="{STATICURL}js/mobile/common.js?{VERHASH}" charset="{CHARSET}"></script>
+<script>
+function setScale() {
+    if (window.top !== window) {
+        return;
+    }
+    var pageScale = 1;
+
+    var width = document.documentElement.clientWidth || 320;
+    var height = document.documentElement.clientHeight || 486;
+
+    if (width / height >= 320 / 486) {
+        pageScale = height / 486;
+    } else {
+        pageScale = width / 320;
+    }
+    var content = 'width=320, initial-scale=' + pageScale + ', maximum-scale=' + pageScale + ', user-scalable=no';
+    document.getElementById('viewport').setAttribute('content', content);
+}
+setScale();
+</script>
+</head>
+<body class="bg {if $_GET['mod']=='post'}bgf{/if}" ontouchstart>
+<!--{hook/global_header_mobile}-->
+<!--{if $_G['cache']['plugin']['muquan_mobile_s']}-->
+<!--{eval $mq_config=$_G['cache']['plugin']['muquan_mobile_s'];}-->
+<!--{/if}-->
+<!--{if $mq_config['m_color']}-->
+<style>
+.indexheader nav a.on{ color:$mq_config[m_color];}
+.btn_login .pn,.btn_register .pn{ background:$mq_config[m_color];border:1px $mq_config[m_color] solid;border-width:0.5px;}
+.button{ background:$mq_config[m_color];}
+.ttp li.a a { color: $mq_config[m_color]; }
+.bottom-bar { background: $mq_config[m_color]; }
+a.blue:link, a.blue:visited, a.blue:hover,.blue{color:$mq_config[m_color];}
+.fast-post-btns .on{color: $mq_config[m_color];}
+.user_box li span{ color:$mq_config[m_color];}
+.user_avatar .send_pm{color:$mq_config[m_color];}
+.user_list a.on{ color:$mq_config[m_color];}
+.pmbox li .num{background: $mq_config[m_color];}
+.footer_nav .on span{ color:$mq_config[m_color];}
+.footer_nav .on i, .footer_nav .on span{ color:$mq_config[m_color];}
+</style>
+<!--{/if}-->

@@ -1,0 +1,48 @@
+<!--{template common/header}-->
+<!-- header start -->
+<!--{eval $tname=($_GET[type]=='reply')?$mq_lang[reply]:$mq_lang[thread];}-->
+<!--{eval $wg_title=$_G['uid'] == $space['uid']? $mq_lang[my].$tname:$space[username].$tname; }
+<!--{eval $wg_url='home.php?mod=space&uid='.$_G[uid].'&do=profile&mycenter=1'; }
+<!--{subtemplate common/header_dh}-->
+<!-- header end -->
+<!-- main threadlist start -->
+<!-- userinfo start -->
+<div class="userinfo">
+      <!--{subtemplate home/space_userinfo}-->
+</div>
+<div class="threadlist">
+	<ul>
+	<!--{if $list}-->
+		<div id="alist">
+		<!--{loop $list $thread}-->
+			        <li>
+                    <a href="forum.php?mod=viewthread&tid=$thread[tid]&extra=$extra"  >
+                        <div class="title cl">
+                         <!--{if in_array($thread['displayorder'], array(1, 2, 3, 4))}-->
+				              <em class="ico_top ico">{$mq_lang[top]}</em>
+			              <!--{elseif $thread['digest'] > 0}-->
+			                  <em class="ico_des ico">{$mq_lang[dig]}</em>
+			              <!--{elseif $thread['rate'] > 0}-->
+			                  <em class="ico_rate ico">{$mq_lang[rate]}</em>
+			              <!--{elseif $thread['attachment'] == 2 && $_G['setting']['mobile']['mobilesimpletype'] == 0}-->
+			                  <em class="ico_tu ico">{$mq_lang[tu]}</em>
+			              <!--{/if}-->
+                          <span $thread[highlight]>{$thread[subject]}</span>
+                        </div>
+                        <p class="cl">
+                          <em>{$thread[views]} / {$thread[replies]}</em>
+                          <span><i class="iconfont">&#xe6b8;</i>{$thread[author]}</span><span>{$thread['dateline']}</span>
+                        </p>
+                       </a>
+                    </li>
+		<!--{/loop}-->
+		</div>
+	<!--{else}-->
+	  <li style="padding:0 10px;">{lang no_related_posts}</li>
+	<!--{/if}-->
+	</ul>
+</div>
+{$multi}
+<!-- main threadlist end -->
+<!--{eval $nofooter = true;}-->
+<!--{template common/footer}-->

@@ -1,0 +1,288 @@
+ /* -----------------------------------------------------------------
+
+The Whole CSS written by Elecom.
+(C) Elecom Inc.
+Annoucement here,Copyright
+Shenzhen.Eleccom Technology.使用原代码请联系作者QQ: 2300184378 / 2017-04-09 20:00:06
+
+---------------------------------------------------------------------------------------*/
+
+
+body { color: #7887A5; background: #FFFFFF}
+#elecom_nav { margin-bottom: 0}
+.top_tag { display: none !important}
+
+.text-center {
+    text-align: center;
+}
+.authors--popular, .authors--popular a { color: #FFFFFF}
+.post-author .post-author__entry-avatar {
+    width: 70px;
+	height: 70px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin: auto;
+    background-color: #d6dae4;
+    margin-bottom: 15px;
+}
+.post-author .post-author__entry-avatar img { width: 70px; height: 70px}
+.post-author .post-author__entry {
+	height: 222px;
+	width: 222px;
+    text-align: center;
+}
+.heading-title .heading-title__inner {
+    display: inline-block;
+    max-width: 550px;
+    width: 100%;
+}
+.heading-title .heading-title__title {
+    margin-top: 10px;
+}
+.heading-title .heading-title__title {
+    font-size: 40px;
+	font-weight: bold;
+	color: #62BAE4;
+}
+.heading-title .heading-title__desc {
+    font-size: 16px;
+	margin-bottom: 15px;
+}
+.heading-title .heading-title__desc {
+    font-size: 16px;
+}
+
+
+.footer-logo {
+    height: 375px;
+    position: relative;
+}
+.bg-scroll {
+    background-attachment: scroll;
+}
+.bg-fixed, .bg-scroll, .bg-parallax {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+}
+.footer-logo a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+    float: left;
+}
+.col-lg-6 {
+    width: 556px;
+}
+.post-author {
+    background-color: #818fab;
+    position: relative;
+	background-attachment: scroll !important;
+}
+.post-author {
+    overflow: hidden;
+}
+.post-author .post-author__entry {
+    z-index: 1;
+    text-align: center;
+    background-color: rgba(69,80,102,0.8);
+    padding: 20px;
+}
+.authors--popular [class*="col-"]:nth-child(1) .post-author .post-author__entry {
+	height: 514px;
+    background-color: rgba(150,175,227,0.9);
+}
+.table {
+    display: table;
+    width: 100%;
+}
+.post-author .table {
+    height: 100%;
+}
+.table .table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+.cover-img, .post-author .post-author__entry-avatar, .post-rate .post-rate__entry-cat .meta-author, .widget_postslisting .widget__random-post .img, .widget__photo li .img, .gallery-icon {
+    overflow: hidden;
+    position: relative;
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.post-author .post-author__entry-avatar {
+    width: 70px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin: auto;
+    background-color: #d6dae4;
+    margin-bottom: 15px;
+}
+.post-author--large .post-author__entry-avatar {
+    width: 85px;
+	height: 85px;
+}
+.post-author--large .post-author__entry-avatar img { width: 85px; height: 85px}
+.post-author .post-author__entry-name {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.post-author--large .post-author__entry-name {
+    font-size: 30px;
+}
+.post-author .post-author__entry-desc {
+    max-width: 430px;
+    margin: auto;
+	font-size: 14px;
+	line-height: 25px;
+}
+.post-author .post-author__entry-desc {
+    margin-bottom: 10px;
+}
+.post-author .post-author__entry-name .post-author__entry-role {
+    font-size: 10px;
+    border: 1px solid;
+    font-weight: 400;
+    padding: 1px 10px;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+.post-author .post-author__entry-view a {
+    padding-bottom: 3px;
+    display: inline-block;
+    font-weight: bold;
+    border-bottom: 1px solid;
+}
+.post-author__entry-view { padding-top: 10px; line-height: 26px}
+
+
+.authors [class*="col-"], .asgard-colleagues [class*="col-"], .blog-standard [class*="col-"], .blog-grid [class*="col-"], .blog-list [class*="col-"] {
+    margin-bottom: 30px;
+}
+.authors--popular [class*="col-"]:nth-child(2) .post-author .post-author__entry {
+    background-color: rgba(234,151,150,0.9);
+}
+.authors--popular [class*="col-"]:nth-child(3) .post-author .post-author__entry {
+    background-color: rgba(139,183,146,0.9);
+}
+.authors--popular [class*="col-"]:nth-child(4) .post-author .post-author__entry {
+    background-color: rgba(150,134,167,0.9);
+}
+.authors--popular [class*="col-"]:nth-child(5) .post-author .post-author__entry {
+    background-color: rgba(214,191,129,0.9);
+}
+
+
+.angle-warp {
+    position: absolute;
+    left: -10px;
+    height: 26px;
+    color: #fff;
+    text-align: center;
+    background-color: #f63756;
+    line-height: 26px;
+    padding: 0 10px;
+    z-index: 20;
+    top: 10px;
+}
+.activity-list-warp {
+    position: relative;
+    width: 380px;
+    height: auto;
+    float: left;
+    border: 0;
+	margin-right: 30px;
+    margin-bottom: 30px;
+}
+.activity-list-warp:hover{ box-shadow:0 5px 15px rgba(45,50,55,.2);-webkit-transform:translateY(-5px);-moz-transform:translateY(-5px);-o-transform:translateY(-5px)}
+.activity-list-warp:hover .activity-content-warp { border: 1px solid #FFFFFF !important; border-top: 0 !important}
+.angle-warp::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 26px;
+    width: 0;
+    height: 0;
+    border-top: 6px solid #cd213d;
+    border-left: 10px solid transparent;
+}
+.activity-pic {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+.activity-content-warp {
+    position: relative;
+    padding: 20px;
+	border: 1px solid #F0F0F0;
+	border-top: 0
+}
+.activity-content-warp .activity-type {
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    text-align: center;
+    padding: 0 16px;
+    color: #fff;
+    background-color: #62BAE4;
+}
+.pull-right {
+    float: right !important;
+}
+.activity-name {
+    font-size: 20px;
+    line-height: 28px;
+}
+.activity-name a { color: #333333}
+.activity-content-warp .activity-content {
+    line-height: 24px;
+    margin-top: 20px;
+	color: #333333;
+	font-size: 14px
+}
+
+
+.nav-column {
+    position: relative;
+    width: 1200px;
+    height: 62px;
+	margin: 30px auto;
+    background-color: #f6f6f6;
+    font-size: 20px;
+    text-align: center;
+    line-height: 62px;
+	color: #333333
+}
+.icon-calendar {
+	display: inline-block;
+    vertical-align: text-bottom;
+    background-image: url(../icon2.png);
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: 0 0;
+    top: 8px;
+	width: 40px;
+    height: 40px;
+}

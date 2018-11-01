@@ -1,0 +1,42 @@
+ /* -----------------------------------------------------------------
+
+The Whole CSS written by Elecom.
+(C) Elecom Inc.
+Annoucement here,Copyright
+Shenzhen.Eleccom Technology.使用原代码请联系作者QQ: 2300184378 / 2017-04-09 20:00:06
+
+---------------------------------------------------------------------------------------*/
+
+.serch_wp { min-height: 550px}
+#scform_srchtxt { width: 680px}
+
+a { color: #999999}
+.pgs { margin-top: 20px}
+.pg { float: right !important}
+
+#nv_search #ft { margin: 0 auto; text-align: left}
+#ct { float: none; width: 800px; margin: 0 auto}
+#ct .mw .tl { width: 100%}
+
+#threadlist.slst li { border-bottom: 1px solid #f0f0f0; padding: 20px 0 15px 0 !important}
+
+h3.xs3 { margin-bottom: 10px}
+h3.xs3 a { font-size: 18px; line-height: 28px; color: #333333; text-decoration: none}
+h3.xs3 a:hover { color: #62BAE4}
+.pbw p { font-size: 14px;color: #BBBBBB !important;line-height: 24px; margin-bottom: 10px}
+.slst p span, .slst p span a, .slst p span a:visited { color: #BBBBBB}
+
+
+.slst { width: 800px}
+.sttl { padding: 0; margin: 30px 0 0 0; border: 0; background: none}
+
+
+.searchform { margin-top: 30px}
+#scform_form { background: none}
+.td_srchtxt { width: 718px; border: 1px solid #f0f0f0; border-right: 0; background: none}
+.td_srchbtn { width: 78px; height: 58px; border: 1px solid #3CA5F6; background: url(../search.png) no-repeat center center}
+#scform_submit { width: 78px}
+#scform_tb .a { color: #5490D3; font-weight: 400}
+
+
+#scform_tb li { display: none}

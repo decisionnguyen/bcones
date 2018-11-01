@@ -1,0 +1,214 @@
+<script src="{$_G['siteurl']}source/plugin/csdn123com_toutiao/res/jquery.min.js"></script>
+
+<div class="container" id="cpcontainer">
+  <form name="cpform" method="post" action="?{$server_url}&modifysmt=yes" id="cpform">
+    <input type="hidden" name="formhash" id="formhash" value="{FORMHASH}" />
+    <input type="hidden" name="modify_update_id" value="{$postRs['ID']}" />
+    <table class="tb tb2 ">
+      <tbody>
+        <tr>
+          <td colspan="2" class="td27" s="1">{lang csdn123com_toutiao:csdn123_tip82}</td>
+        </tr>
+        <tr class="noborder" onmouseover="setfaq(this, 'faqd3e6')">
+          <td class="vtop rowform"><input name="keyword"  type="text" class="txt" value="{$postRs['keyword']}"></td>
+          <td class="vtop tips2" s="1">&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="td27" s="1">{lang csdn123com_toutiao:csdn123_tip95}</td>
+        </tr>
+        <tr class="noborder" onmouseover="setfaq(this, 'faqd3e6')">
+          <td class="vtop rowform">
+          
+          	  <ul onmouseover="altStyle(this);">
+          	  <!--{if $postRs['forum_portal']=='forum'}-->              
+              <li class="checked" id="forum"><input name="forum_portal" type="radio" class="radio" value="forum" checked>&nbsp;{lang csdn123com_toutiao:csdn123_tip96}</li>
+              <li id="portal"><input name="forum_portal" type="radio" class="radio" value="portal">&nbsp;{lang csdn123com_toutiao:csdn123_tip97}</li>
+              <!--{else}-->
+              <li id="forum"><input name="forum_portal" type="radio" class="radio" value="forum">&nbsp;{lang csdn123com_toutiao:csdn123_tip96}</li>
+              <li class="checked" id="portal"><input name="forum_portal" type="radio" class="radio" value="portal"  checked>&nbsp;{lang csdn123com_toutiao:csdn123_tip97}</li>
+              <!--{/if}-->
+              </ul>
+
+           </td>
+          <td class="vtop tips2" s="1">&nbsp;&nbsp;</td>
+        </tr>
+      </tbody>
+      <tbody id="forum_panel" {if $postRs['forum_portal']=='portal'}style="display:none"{/if}>
+        <tr>
+          <td colspan="2" class="td27" s="1">{lang csdn123com_toutiao:csdn123_tip17}</td>
+        </tr>
+        <tr class="noborder" onmouseover="setfaq(this, 'faqd3e6')">
+          <td class="vtop rowform"><select name="fid" id="fid" onChange="ajaxget('forum.php?mod=ajax&action=getthreadtypes&fid=' + this.value, 'threadtypes');">
+              
+              <!--{eval echo forumselect(FALSE, 0, $postRs['fid'], TRUE)}-->
+              
+            </select></td>
+          <td class="vtop tips2" s="1"><strong>{lang csdn123com_toutiao:csdn123_tip15}</strong>{lang csdn123com_toutiao:csdn123_tip16}</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="td27" s="1">{lang csdn123com_toutiao:csdn123_tip50}</td>
+        </tr>
+        <tr class="noborder" onmouseover="setfaq(this, 'faqd3e6')">
+          <td class="vtop rowform"><span id="threadtypes">
+            <select name="threadtypeid" id="threadtypeid">
+              <option value="0"></option>
+              
+              <!--{loop $typeclassArr $typeclass}--> 
+              
+              <!--{if $typeclass['typeid']==$postRs['typeid']}-->
+              
+              <option value="{$typeclass['typeid']}" selected>{$typeclass['name']}</option>
+              
+              <!--{else}-->
+              
+              <option value="{$typeclass['typeid']}">{$typeclass['name']}</option>
+              
+              <!--{/if}--> 
+              
+              <!--{/loop}-->
+              
+            </select>
+            </span></td>
+          <td class="vtop tips2" s="1"><strong>{lang csdn123com_toutiao:csdn123_tip15}</strong>{lang csdn123com_toutiao:csdn123_tip51}</td>
+        </tr>
+      </tbody>
+      <tbody id="portal_panel" {if $postRs['forum_portal']=='forum'}style="display:none"{/if}>
+        <tr>
+          <td colspan="2" class="td27" s="1">{lang csdn123com_toutiao:csdn123_tip98}</td>
+        </tr>
+        <tr class="noborder" onmouseover="setfaq(this, 'faqd3e6')">
+          <td class="vtop rowform"><!--{eval echo category_showselect('portal', 'tocatid', false, $postRs['portal'])}--></td>
+          <td class="vtop tips2" s="1"><strong>{lang csdn123com_toutiao:csdn123_tip15}</strong>{lang csdn123com_toutiao:csdn123_tip99}</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td colspan="2" class="td27" s="1">{lang csdn123com_toutiao:csdn123_tip56}</td>
+        </tr>
+        <tr class="noborder" onmouseover="setfaq(this, 'faqd3e6')">
+          <td class="vtop rowform"><input name="replaynum"  type="text" class="txt"  value="{$postRs['replaynum']}"></td>
+          <td class="vtop tips2" s="1"><strong>{lang csdn123com_toutiao:csdn123_tip15}</strong>{lang csdn123com_toutiao:csdn123_tip57}</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="td27" s="1">{lang csdn123com_toutiao:csdn123_tip100}</td>
+        </tr>
+        <tr class="noborder" onmouseover="setfaq(this, 'faqd3e6')">
+          <td class="vtop rowform"><input name="first_uid"  type="text" class="txt"  value="{$postRs['first_uid']}"></td>
+          <td class="vtop tips2" s="1">
+          
+          <!--{if (majia_chk())}-->
+          <a href="?{$regUser}" style="text-decoration:none;color:Red">{lang csdn123com_toutiao:csdn123_tip155}</a>
+          <!--{else}-->
+          <strong>{lang csdn123com_toutiao:csdn123_tip15}</strong>{lang csdn123com_toutiao:csdn123_tip101}
+          <!--{/if}-->
+          
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="td27" s="1">{lang csdn123com_toutiao:csdn123_tip18}</td>
+        </tr>
+        <tr class="noborder" onmouseover="setfaq(this, 'faqd3e6')">
+          <td class="vtop rowform"><input name="reply_uid"  type="text" class="txt"  value="{$postRs['reply_uid']}"></td>
+          <td class="vtop tips2" s="1">
+          
+          <!--{if (majia_chk())}-->
+          <a href="?{$regUser}" style="text-decoration:none;color:Red">{lang csdn123com_toutiao:csdn123_tip155}</a>
+          <!--{else}-->
+          <strong>{lang csdn123com_toutiao:csdn123_tip15}</strong>{lang csdn123com_toutiao:csdn123_tip19}
+          <!--{/if}-->
+          
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="td27" s="1">{lang csdn123com_toutiao:csdn123_tip102}</td>
+        </tr>
+        <tr class="noborder" onmouseover="setfaq(this, 'faqd3e6')">
+          <td class="vtop rowform"><input name="intval_time"  type="text" class="txt"  value="{$postRs['intval_time']}"></td>
+          <td class="vtop tips2" s="1"><strong>{lang csdn123com_toutiao:csdn123_tip15}</strong>{lang csdn123com_toutiao:csdn123_tip103}</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="td27" s="1">{lang csdn123com_toutiao:csdn123_tip104}</td>
+        </tr>
+        <tr class="noborder" onmouseover="setfaq(this, 'faqd3e6')">
+          <td class="vtop rowform"><input name="views"  type="text" class="txt"  value="{$postRs['views']}"></td>
+          <td class="vtop tips2" s="1"><strong>{lang csdn123com_toutiao:csdn123_tip15}</strong>{lang csdn123com_toutiao:csdn123_tip105}</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="td27" s="1">{lang csdn123com_toutiao:csdn123_tip109}</td>
+        </tr>
+        <tr class="noborder" onmouseover="setfaq(this, 'faqd3e6')">
+          <td class="vtop rowform">
+          
+          	<ul onmouseover="altStyle(this);">            
+            <!--{if $postRs['simplified']=='original'}-->
+            <li class="checked"><input name="simplified" type="radio" class="radio" value="original" id="simplified_original" checked><label for="simplified_original">&nbsp;{lang csdn123com_toutiao:csdn123_tip108}</label></li>
+            <li><input name="simplified" type="radio" class="radio" value="yes" id="simplified_yes"><label for="simplified_yes">&nbsp;{lang csdn123com_toutiao:csdn123_tip106}</label></li>
+            <li><input name="simplified" type="radio" class="radio" value="no" id="simplified_no"><label for="simplified_no">&nbsp;{lang csdn123com_toutiao:csdn123_tip107}</label></li>
+            <!--{elseif $postRs['simplified']=='yes'}-->
+            <li><input name="simplified" type="radio" class="radio" value="original" id="simplified_original"><label for="simplified_original">&nbsp;{lang csdn123com_toutiao:csdn123_tip108}</label></li>
+            <li class="checked"><input name="simplified" type="radio" class="radio" value="yes" id="simplified_yes" checked><label for="simplified_yes">&nbsp;{lang csdn123com_toutiao:csdn123_tip106}</label></li>
+            <li><input name="simplified" type="radio" class="radio" value="no" id="simplified_no"><label for="simplified_no">&nbsp;{lang csdn123com_toutiao:csdn123_tip107}</label></li>
+            <!--{else}-->
+            <li><input name="simplified" type="radio" class="radio" value="original" id="simplified_original"><label for="simplified_original">&nbsp;{lang csdn123com_toutiao:csdn123_tip108}</label></li>
+            <li><input name="simplified" type="radio" class="radio" value="yes" id="simplified_yes"><label for="simplified_yes">&nbsp;{lang csdn123com_toutiao:csdn123_tip106}</label></li>
+            <li class="checked"><input name="simplified" type="radio" class="radio" value="no" id="simplified_no" checked><label for="simplified_no">&nbsp;{lang csdn123com_toutiao:csdn123_tip107}</label></li>
+            <!--{/if}-->            
+            </ul>
+            
+          </td>
+          <td class="vtop tips2" s="1"><strong>{lang csdn123com_toutiao:csdn123_tip15}</strong>{lang csdn123com_toutiao:csdn123_tip110}</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="td27" s="1">{lang csdn123com_toutiao:csdn123_tip111}</td>
+        </tr>
+        <tr class="noborder" onmouseover="setfaq(this, 'faqd3e6')">
+          <td class="vtop rowform">
+          
+          	<ul onmouseover="altStyle(this);">
+            <!--{if $postRs['weiyanchang']=='yes'}-->
+          	<li class="checked"><input name="weiyanchang" type="radio" class="radio" value="yes" id="weiyanchang_yes" checked><label for="weiyanchang_yes">&nbsp;{lang csdn123com_toutiao:csdn123_tip54}</label></li>
+            <li><input name="weiyanchang" type="radio" class="radio" value="no" id="weiyanchang_no"><label for="weiyanchang_no">&nbsp;{lang csdn123com_toutiao:csdn123_tip55}</label></li>
+          	<!--{else}-->
+            <li><input name="weiyanchang" type="radio" class="radio" value="yes" id="weiyanchang_yes"><label for="weiyanchang_yes">&nbsp;{lang csdn123com_toutiao:csdn123_tip54}</label></li>
+            <li class="checked"><input name="weiyanchang" type="radio" class="radio" value="no" id="weiyanchang_no" checked><label for="weiyanchang_no">&nbsp;{lang csdn123com_toutiao:csdn123_tip55}</label></li>
+            <!--{/if}-->
+            </ul>
+             
+          </td>
+          <td class="vtop tips2" s="1"><strong>{lang csdn123com_toutiao:csdn123_tip15}</strong><a href="?{$weiyanchang}" style="text-decoration:none">{lang csdn123com_toutiao:csdn123_tip112}</a></td>
+        </tr>
+        <tr>
+          <td colspan="2"><div class="fixsel"><br/>
+              <br/>
+              <input type="submit" class="btn" id="submit_editsubmit" name="editsubmit" value="{lang csdn123com_toutiao:csdn123_tip76}">
+              <br/>
+              <br/>
+              <br/>
+            </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>
+<script>
+var csdn123_jQ = jQuery.noConflict(true);
+(function ( $, window, undefined ) {
+	
+	$("#forum").click(function(){
+	
+		$("#forum_panel").show();
+		$("#portal_panel").hide();		
+		
+	});
+	
+	
+	$("#portal").click(function(){
+	
+		$("#forum_panel").hide();
+		$("#portal_panel").show();		
+		
+	});
+	
+	
+})( csdn123_jQ, window);
+</script> 

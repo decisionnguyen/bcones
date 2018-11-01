@@ -1,0 +1,31 @@
+<!--{if $list['threadcount']}-->
+<ul class="hotlist">
+	<!--{loop $list['threadlist'] $key $thread}-->
+		<li>
+			<a href="forum.php?mod=viewthread&tid=$thread[tid]&fromguid=hot&{if $_GET['archiveid']}archiveid={$_GET['archiveid']}&{/if}extra=$extra">
+				<!--{if !$thread['forumstick'] && $thread['closed'] > 1 && ($thread['isgroup'] == 1 || $thread['fid'] != $_G['fid'])}-->
+						<!--{eval $thread[tid]=$thread[closed];}-->
+				<!--{/if}-->
+				<div class="title cl">
+					  <!--{if in_array($thread['displayorder'], array(1, 2, 3, 4))}-->
+					   <em class="ico_top ico">{$mq_lang[top]}</em>
+					  <!--{elseif $thread['digest'] > 0}-->
+						 <em class="ico_des ico">{$mq_lang[dig]}</em>
+					   <!--{elseif $thread['rate'] > 0}-->
+						 <em class="ico_rate ico">{$mq_lang[rate]}</em>
+					   <!--{elseif $thread['attachment'] == 2 && $_G['setting']['mobile']['mobilesimpletype'] == 0}-->
+						 <em class="ico_tu ico">{$mq_lang[tu]}</em>
+						<!--{/if}-->
+					   <span>$thread[typehtml] $thread[sorthtml]{$thread[subject]}</span>
+				</div>
+				<p class="cl">
+				  <em>{$thread[views]} / {$thread[replies]}</em>
+				  <span><i class="iconfont">&#xe6b8;</i>{$thread[author]}</span><span><!--{eval echo dgmdate($thread['dbdateline'],'u');}--></span>
+				</p>
+			</a>
+		</li>
+	<!--{/loop}-->
+</ul>
+<!--{else}-->
+<p class="empty">{lang guide_nothreads}</p>
+<!--{/if}-->

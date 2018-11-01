@@ -1,0 +1,53 @@
+<form name="cpform" method="post" autocomplete="off" action="?{$server_url}&delword=yes" id="cpform" >
+  <input type="hidden" name="formhash" id="formhash" value="{FORMHASH}" />
+  <table class="tb tb2 ">
+    <tbody>
+      <tr>
+      	<td>&nbsp;&nbsp;</td>
+        <td colspan="4">
+        <div style="margin-top:4px;margin-bottom:20px;">
+            <a href="?{$server_url}&weiyanchang_add=show&formhash={FORMHASH}" class="addtr">{lang csdn123com_toutiao:csdn123_tip115}</a> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="?{$server_url}&weiyanchang_import=show&formhash={FORMHASH}" class="addtr">{lang csdn123com_toutiao:csdn123_tip116}</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="?{$server_url}&weiyanchang_output=yes&formhash={FORMHASH}" class="addtr" style="background-position:-286px -150px">{lang csdn123com_toutiao:csdn123_tip120}</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="?{$server_url}&weiyanchang_clear=yes&formhash={FORMHASH}" class="addtr" style="background-position-y:-286px">{lang csdn123com_toutiao:csdn123_tip154}</a>
+            
+        </div>    
+        </td>
+      </tr>
+      <tr class="header">
+        <th>&nbsp;&nbsp;</th>
+        <th>ID</th>
+        <th>{lang csdn123com_toutiao:csdn123_tip113}</th>
+        <th>{lang csdn123com_toutiao:csdn123_tip114}</th>
+        <th>&nbsp;</th>
+      </tr>
+    {loop $weiyanchang_list $weiyanchang_value}
+    <tr class="hover">
+      <td class="td25"><input type="checkbox" name="idarray[]" value="{eval echo dhtmlspecialchars($weiyanchang_value['ID'])}" class="checkbox"></td>
+      <td class="td24">{eval echo dhtmlspecialchars($weiyanchang_value['ID'])}</td>
+      <td>{eval echo dhtmlspecialchars($weiyanchang_value['word1'])}</td>
+      <td>{eval echo dhtmlspecialchars($weiyanchang_value['word2'])}</td>
+      <td><a href="?{$server_url}&modify_id={eval echo dhtmlspecialchars($weiyanchang_value['ID'])}&page={$page}&formhash={FORMHASH}">{lang csdn123com_toutiao:csdn123_tip67}</a></td>
+    </tr>
+    {/loop}
+    <tr>
+      <td colspan="5"><input name="chkall" id="chkall" type="checkbox" class="checkbox" onclick="checkAll('prefix', this.form, 'idarray', 'chkall')">
+        <label for="chkall">{lang csdn123com_toutiao:csdn123_tip77}</label>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="submit" class="btn" id="submit_deletesubmit" name="deletesubmit" value="{lang csdn123com_toutiao:csdn123_tip13}" /></td>
+    </tr>
+    </tbody>
+    
+  </table>
+</form>
+
+<div class="pg" style="margin-top:32px;margin-bottom:32px;">
+<a href="?{$prePage}">{lang csdn123com_toutiao:csdn123_tip46}</a>
+&nbsp;&nbsp;
+{$page}
+&nbsp;&nbsp;
+<a href="?{$nextPage}">{lang csdn123com_toutiao:csdn123_tip47}</a>
+</div>
