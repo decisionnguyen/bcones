@@ -5,3 +5,6 @@
 /config/
 
 /uc_server/
+/data/
+/template/
+!/template/elec_201706_bt/market/

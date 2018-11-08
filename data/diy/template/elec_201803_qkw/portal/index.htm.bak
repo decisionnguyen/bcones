@@ -1,7 +1,0 @@
-<!--{template common/header}-->
-<style id="diy_style" type="text/css"></style>
-<div class="wp">
-	<!--[diy=diy1]--><div id="diy1" class="area"><div id="frameSObl15" class="frame move-span cl frame-1"><div id="frameSObl15_left" class="column frame-1-c"><div id="frameSObl15_left_temp" class="move-span temp"></div><!--{block/52}--></div></div></div><!--[/diy]-->
-</div>
-
-<!--{template common/footer}-->
