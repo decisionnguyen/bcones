@@ -68,17 +68,20 @@ class GettingApiReturn
             curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
         }
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,FALSE);
-	curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,FALSE);
+		curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,FALSE);
+		curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,FALSE);
+		$ret = curl_exec($ch);
 
-        if(!($curlRes = curl_exec($ch))){
-            $statusCode = curl_getinfo($ch);
-            return $statusCode;
+       try{
+            if(!$ret){
+                $error = curl_errno($ch);
+                curl_close($ch);
+                throw new Exception("curl出错，错误码:$error");
+            }
+        }catch (Exception $e){
+            echo $e->getMessage();
         }
         curl_close($ch);
-	
-	
-	$returnInfoArr = json_decode($curlRes, true);
-	return $returnInfoArr;
-    }
+        return json_decode($ret, true);
+	}
 }
