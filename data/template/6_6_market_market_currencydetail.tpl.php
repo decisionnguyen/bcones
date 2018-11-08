@@ -1,4 +1,5 @@
-<?php if(!defined('IN_DISCUZ')) exit('Access Denied'); hookscriptoutput('market_currencydetail');?><?php include template('common/header'); ?><link rel="stylesheet" href="static/css/index.css">
+<?php if(!defined('IN_DISCUZ')) exit('Access Denied'); hookscriptoutput('market_currencydetail');?>
+﻿<?php include template('common/header'); ?><link rel="stylesheet" href="static/css/index.css">
 <link rel="stylesheet" href="static/css/detail.css">
 
 <div class="pageContent">
@@ -21,11 +22,11 @@
                     <div class="label">涨跌幅</div>
                 </div>
                 <div>
-                    <div>$ <?php echo $highPrice;?></div>
+                    <div>￥ <?php echo $highPrice;?></div>
                     <div class="label">24h最高</div>
                 </div>
                 <div>
-                    <div>$ <?php echo $lowPrice;?></div>
+                    <div>￥ <?php echo $lowPrice;?></div>
                     <div class="label">24h最低</div>
                 </div>
                 <div>
